@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" role="img" aria-label="等效介电常数：表层微带线一侧是空气，内层带状线两侧都是介质，前者算出来的等效介电常数比后者小">
+  <!--
+    照着课件「等效介电常数」那一页画的：
+      同一套方法（v_p = c/√ε_r），拿 Polar 里的延迟反推 ε_eff。
+      表层微带线：一侧是空气 → ε_eff ≈ 3.13
+      内层带状线：两侧都是介质 → ε_eff ≈ 4.5
+      → 表层比内层小，因为空气那一侧（ε = 1）把它拉低了。
+    ⚠️ 截面只画「谁围着走线」，不标尺寸 —— 尺寸在 fig-cap-ulp.svg 里已经给过，这里不重复。
+    ⚠️ 延迟和 ε_eff 的数值来自课件那一页（Delay 150.463 / 179.729 ps/in，ε_eff ≈ 3.13 / 4.5）。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .metal { fill: #00629b; }
+    .diel  { fill: #eef3f7; }
+    .ttl   { fill: #46586a; font-size: 13px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .lbl   { fill: #7a8b99; font-size: 11px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .mid   { fill: #46586a; font-size: 12px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .val   { fill: #00629b; font-size: 17px; font-weight: 600;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .f     { fill: #46586a; font-size: 15px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+    .f-sub { fill: #46586a; font-size: 10px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .metal { fill: #00b5e2; }
+      .diel  { fill: #1d262c; }
+      .ttl   { fill: #b4c4d0; }
+      .lbl   { fill: #8b9aa7; }
+      .mid   { fill: #b4c4d0; }
+      .val   { fill: #00b5e2; }
+      .f, .f-sub { fill: #c9d6e0; }
+    }
+  </style>
+
+  <!-- 方法：拿延迟反推 -->
+  <text class="f" x="340" y="34" text-anchor="middle">ε<tspan dy="4" font-size="10">eff</tspan><tspan dy="-4"> = ( 11.8 × 延迟 / 1000 )</tspan><tspan dy="-8" font-size="10">2</tspan></text>
+
+  <!-- ==================== 左：表层微带线 ==================== -->
+  <text class="ttl" x="185" y="72" text-anchor="middle">表层微带线</text>
+
+  <!-- 上面是空气 -->
+  <text class="lbl" x="185" y="102" text-anchor="middle">空气</text>
+  <!-- 走线 -->
+  <rect class="metal" x="135" y="110" width="100" height="14" rx="2" />
+  <!-- 下面是 FR4 -->
+  <rect class="diel"  x="85" y="124" width="200" height="56" />
+  <text class="lbl" x="185" y="157" text-anchor="middle">FR4</text>
+  <!-- 参考平面 -->
+  <rect class="metal" x="85" y="180" width="200" height="10" rx="1.5" />
+
+  <text class="mid" x="185" y="220" text-anchor="middle">延迟 ≈ 150 ps/in</text>
+  <text class="val" x="185" y="252" text-anchor="middle">ε<tspan dy="4" font-size="11">eff</tspan><tspan dy="-4"> ≈ 3.13</tspan></text>
+
+  <!-- ==================== 右：内层带状线 ==================== -->
+  <text class="ttl" x="495" y="72" text-anchor="middle">内层带状线</text>
+
+  <rect class="metal" x="395" y="88"  width="200" height="10" rx="1.5" />
+  <rect class="diel"  x="395" y="98"  width="200" height="34" />
+  <text class="lbl" x="495" y="119" text-anchor="middle">FR4</text>
+  <rect class="metal" x="445" y="132" width="100" height="14" rx="2" />
+  <rect class="diel"  x="395" y="146" width="200" height="34" />
+  <text class="lbl" x="495" y="167" text-anchor="middle">FR4</text>
+  <rect class="metal" x="395" y="180" width="200" height="10" rx="1.5" />
+
+  <text class="mid" x="495" y="220" text-anchor="middle">延迟 ≈ 179.7 ps/in</text>
+  <text class="val" x="495" y="252" text-anchor="middle">ε<tspan dy="4" font-size="11">eff</tspan><tspan dy="-4"> ≈ 4.5</tspan></text>
+
+  <!-- 结论 -->
+  <text class="ttl" x="340" y="286" text-anchor="middle">表层等效介电常数比内层小</text>
+</svg>

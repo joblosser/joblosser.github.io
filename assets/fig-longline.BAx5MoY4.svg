@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" width="680" height="340" role="img" aria-label="长线仿真波形：信号电流与返回电流同步上升，都稳定在 10 毫安">
+  <!--
+    照着 ADS 里的仿真截图画的。纵轴 0..10 mA，横轴 0..8 nsec。
+    ⚠️ 返回电流是**正**的、和信号电流几乎重合 —— 不要画到负半轴去。
+       两者差 1.5%，看着像一条线，正是原图的样子。
+    坐标：x=88 是 t=0，x=560 是 t=8；y=272 是 0 mA，y=52 是 10 mA。
+  -->
+  <style>
+    .grid  { stroke: #e4e9ed; stroke-width: 1; }
+    .axis  { fill: none; stroke: #c9d2d9; stroke-width: 1.2; }
+    .sig   { fill: none; stroke: #00629b; stroke-width: 2;
+             stroke-linejoin: round; stroke-linecap: round; }
+    .ret   { fill: none; stroke: #ba0c2f; stroke-width: 1.4;
+             stroke-linejoin: round; stroke-linecap: round; }
+    .mk    { fill: none; stroke: #ba0c2f; stroke-width: 1.1; }
+    .tick  { fill: #5a6c7d; font-size: 11px;
+             font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .mid   { text-anchor: middle; }
+    .end   { text-anchor: end; }
+
+    @media (prefers-color-scheme: dark) {
+      .grid  { stroke: #22303c; }
+      .axis  { stroke: #3d4d5a; }
+      .sig   { stroke: #00b5e2; }
+      .ret   { stroke: #ff7a8a; }
+      .mk    { stroke: #ff7a8a; }
+      .tick  { fill: #7d8f9d; }
+      .lbl   { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- 网格 -->
+  <path class="grid" d="M88 272 H560" />
+  <path class="grid" d="M88 228 H560" />
+  <path class="grid" d="M88 184 H560" />
+  <path class="grid" d="M88 140 H560" />
+  <path class="grid" d="M88 96 H560" />
+  <path class="grid" d="M88 52 H560" />
+  <path class="grid" d="M147 52 V272" />
+  <path class="grid" d="M206 52 V272" />
+  <path class="grid" d="M265 52 V272" />
+  <path class="grid" d="M324 52 V272" />
+  <path class="grid" d="M383 52 V272" />
+  <path class="grid" d="M442 52 V272" />
+  <path class="grid" d="M501 52 V272" />
+
+  <!-- 坐标轴 -->
+  <path class="axis" d="M88 52 V272" />
+  <path class="axis" d="M88 272 H560" />
+
+  <!-- 信号电流（蓝实线） -->
+  <path class="sig" d="M88 272 L89.2 272 L90.4 272 L91.5 272 L92.7 272 L93.9 267.6 L95.1 263.2 L96.3 258.7 L97.4 254.3 L98.6 249.8 L99.8 245.2 L101 240.7 L102.2 236.2 L103.3 231.6 L104.5 227 L105.7 222.4 L106.9 217.9 L108.1 213.3 L109.2 208.6 L110.4 204 L111.6 199.4 L112.8 194.8 L114 190.2 L115.1 185.5 L116.3 180.9 L117.5 176.3 L118.7 171.6 L119.9 167 L121 162.4 L122.2 157.7 L123.4 153.1 L124.6 148.5 L125.8 143.8 L126.9 139.2 L128.1 134.6 L129.3 130 L130.5 125.4 L131.7 120.8 L132.8 116.3 L134 111.7 L135.2 107.2 L136.4 102.6 L137.6 98.1 L138.7 93.6 L139.9 89.1 L141.1 84.6 L142.3 80.2 L143.5 75.8 L144.6 71.4 L145.8 67 L147 62.7 L148.2 58.4 L149.4 54.1 L150.5 52 L151.7 52 L152.9 52 L154.1 52 L155.3 52 L156.4 52 L157.6 52 L158.8 52 L161.8 52 L162.9 52 L164.1 52 L165.3 52 L166.5 52 L167.7 52 L168.8 52 L170 52 L171.2 52 L172.4 52 L173.6 52 L174.7 52 L175.9 52 L177.1 52 L178.3 52 L179.5 52 L180.6 52 L181.8 52 L183 52 L184.2 52 L185.4 52 L186.5 52 L187.7 52 L188.9 52 L190.1 52 L191.3 52 L192.4 52 L193.6 52 L194.8 52 L196 52 L197.2 52 L198.3 52 L199.5 52 L200.7 52 L201.9 52 L203.1 52 L204.2 52 L205.4 52 L206.6 52 L207.8 52 L209 52 L210.1 52 L211.3 52 L212.5 52 L213.7 52 L214.9 52 L216 52 L217.2 52 L218.4 52 L219.6 52 L220.8 52 L221.9 52 L223.1 52 L224.3 52 L225.5 52 L226.7 52 L227.8 52 L229 52 L230.2 52 L231.4 52 L232.6 52 L233.7 52 L234.9 52 L236.1 52 L237.3 52 L238.5 52 L239.6 52 L240.8 52 L242 52 L243.2 52 L244.4 52 L245.5 52 L246.7 52 L247.9 52 L249.1 52 L250.3 52 L251.4 52 L252.6 52 L253.8 52 L255 52 L256.2 52 L257.3 52 L258.5 52 L259.7 52 L260.9 52 L262.1 52 L263.2 52 L264.4 52 L265.6 52 L266.8 52 L268 52 L269.1 52 L270.3 52 L271.5 52 L272.7 52 L273.9 52 L275 52 L276.2 52 L282.7 52 L288.6 52 L294.5 52 L300.4 52 L306.3 52 L312.2 52 L318.1 52 L324 52 L329.9 52 L335.8 52 L341.7 52 L347.6 52 L353.5 52 L359.4 52 L365.3 52 L371.2 52 L377.1 52 L383 52 L388.9 52 L394.8 52 L400.7 52 L406.6 52 L412.5 52 L418.4 52 L424.3 52 L430.2 52 L436.1 52 L442 52 L447.9 52 L453.8 52 L459.7 52 L465.6 52 L471.5 52 L477.4 52 L483.3 52 L489.2 52 L495.1 52 L501 52 L506.9 52 L512.8 52 L518.7 52 L524.6 52 L530.5 52 L536.4 52 L542.3 52 L548.2 52 L554.1 52 L560 52" />
+
+  <!-- 返回电流（红细线 + 空心方块），比信号电流低一点点 -->
+  <path class="ret" d="M88 272 L89.2 272 L90.4 272 L91.5 272 L92.7 272 L93.9 267.7 L95.1 263.3 L96.3 258.9 L97.4 254.5 L98.6 250.1 L99.8 245.6 L101 241.2 L102.2 236.7 L103.3 232.2 L104.5 227.7 L105.7 223.2 L106.9 218.7 L108.1 214.1 L109.2 209.6 L110.4 205 L111.6 200.5 L112.8 195.9 L114 191.4 L115.1 186.8 L116.3 182.3 L117.5 177.7 L118.7 173.1 L119.9 168.6 L121 164 L122.2 159.4 L123.4 154.9 L124.6 150.3 L125.8 145.8 L126.9 141.2 L128.1 136.7 L129.3 132.2 L130.5 127.6 L131.7 123.1 L132.8 118.6 L134 114.1 L135.2 109.6 L136.4 105.2 L137.6 100.7 L138.7 96.3 L139.9 91.8 L141.1 87.4 L142.3 83.1 L143.5 78.7 L144.6 74.4 L145.8 70.1 L147 65.8 L148.2 61.6 L149.4 57.4 L150.5 55.3 L151.7 55.3 L152.9 55.3 L154.1 55.3 L155.3 55.3 L156.4 55.3 L157.6 55.3 L158.8 55.3 L161.8 55.3 L162.9 55.3 L164.1 55.3 L165.3 55.3 L166.5 55.3 L167.7 55.3 L168.8 55.3 L170 55.3 L171.2 55.3 L172.4 55.3 L173.6 55.3 L174.7 55.3 L175.9 55.3 L177.1 55.3 L178.3 55.3 L179.5 55.3 L180.6 55.3 L181.8 55.3 L183 55.3 L184.2 55.3 L185.4 55.3 L186.5 55.3 L187.7 55.3 L188.9 55.3 L190.1 55.3 L191.3 55.3 L192.4 55.3 L193.6 55.3 L194.8 55.3 L196 55.3 L197.2 55.3 L198.3 55.3 L199.5 55.3 L200.7 55.3 L201.9 55.3 L203.1 55.3 L204.2 55.3 L205.4 55.3 L206.6 55.3 L207.8 55.3 L209 55.3 L210.1 55.3 L211.3 55.3 L212.5 55.3 L213.7 55.3 L214.9 55.3 L216 55.3 L217.2 55.3 L218.4 55.3 L219.6 55.3 L220.8 55.3 L221.9 55.3 L223.1 55.3 L224.3 55.3 L225.5 55.3 L226.7 55.3 L227.8 55.3 L229 55.3 L230.2 55.3 L231.4 55.3 L232.6 55.3 L233.7 55.3 L234.9 55.3 L236.1 55.3 L237.3 55.3 L238.5 55.3 L239.6 55.3 L240.8 55.3 L242 55.3 L243.2 55.3 L244.4 55.3 L245.5 55.3 L246.7 55.3 L247.9 55.3 L249.1 55.3 L250.3 55.3 L251.4 55.3 L252.6 55.3 L253.8 55.3 L255 55.3 L256.2 55.3 L257.3 55.3 L258.5 55.3 L259.7 55.3 L260.9 55.3 L262.1 55.3 L263.2 55.3 L264.4 55.3 L265.6 55.3 L266.8 55.3 L268 55.3 L269.1 55.3 L270.3 55.3 L271.5 55.3 L272.7 55.3 L273.9 55.3 L275 55.3 L276.2 55.3 L282.7 55.3 L288.6 55.3 L294.5 55.3 L300.4 55.3 L306.3 55.3 L312.2 55.3 L318.1 55.3 L324 55.3 L329.9 55.3 L335.8 55.3 L341.7 55.3 L347.6 55.3 L353.5 55.3 L359.4 55.3 L365.3 55.3 L371.2 55.3 L377.1 55.3 L383 55.3 L388.9 55.3 L394.8 55.3 L400.7 55.3 L406.6 55.3 L412.5 55.3 L418.4 55.3 L424.3 55.3 L430.2 55.3 L436.1 55.3 L442 55.3 L447.9 55.3 L453.8 55.3 L459.7 55.3 L465.6 55.3 L471.5 55.3 L477.4 55.3 L483.3 55.3 L489.2 55.3 L495.1 55.3 L501 55.3 L506.9 55.3 L512.8 55.3 L518.7 55.3 L524.6 55.3 L530.5 55.3 L536.4 55.3 L542.3 55.3 L548.2 55.3 L554.1 55.3 L560 55.3" />
+  <rect class="mk" x="85.5" y="269.5" width="5" height="5" />
+  <rect class="mk" x="91.4" y="265.2" width="5" height="5" />
+  <rect class="mk" x="97.3" y="243.1" width="5" height="5" />
+  <rect class="mk" x="103.2" y="220.7" width="5" height="5" />
+  <rect class="mk" x="109.1" y="198" width="5" height="5" />
+  <rect class="mk" x="115" y="175.2" width="5" height="5" />
+  <rect class="mk" x="120.9" y="152.4" width="5" height="5" />
+  <rect class="mk" x="126.8" y="129.7" width="5" height="5" />
+  <rect class="mk" x="132.7" y="107.1" width="5" height="5" />
+  <rect class="mk" x="138.6" y="84.9" width="5" height="5" />
+  <rect class="mk" x="144.5" y="63.3" width="5" height="5" />
+  <rect class="mk" x="150.4" y="52.8" width="5" height="5" />
+  <rect class="mk" x="174" y="52.8" width="5" height="5" />
+  <rect class="mk" x="203.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="233" y="52.8" width="5" height="5" />
+  <rect class="mk" x="262.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="292" y="52.8" width="5" height="5" />
+  <rect class="mk" x="321.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="351" y="52.8" width="5" height="5" />
+  <rect class="mk" x="380.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="410" y="52.8" width="5" height="5" />
+  <rect class="mk" x="439.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="469" y="52.8" width="5" height="5" />
+  <rect class="mk" x="498.5" y="52.8" width="5" height="5" />
+  <rect class="mk" x="528" y="52.8" width="5" height="5" />
+  <rect class="mk" x="557.5" y="52.8" width="5" height="5" />
+
+  <!-- 刻度 -->
+  <text class="tick end" x="78" y="276">0</text>
+  <text class="tick end" x="78" y="232">2</text>
+  <text class="tick end" x="78" y="188">4</text>
+  <text class="tick end" x="78" y="144">6</text>
+  <text class="tick end" x="78" y="100">8</text>
+  <text class="tick end" x="78" y="56">10</text>
+  <text class="tick mid" x="88" y="292">0</text>
+  <text class="tick mid" x="147" y="292">1</text>
+  <text class="tick mid" x="206" y="292">2</text>
+  <text class="tick mid" x="265" y="292">3</text>
+  <text class="tick mid" x="324" y="292">4</text>
+  <text class="tick mid" x="383" y="292">5</text>
+  <text class="tick mid" x="442" y="292">6</text>
+  <text class="tick mid" x="501" y="292">7</text>
+  <text class="tick mid" x="560" y="292">8</text>
+
+  <!-- 轴标题 -->
+  <text class="lbl mid" x="324" y="322">time, nsec</text>
+  <text class="lbl mid" transform="rotate(-90 40 162)" x="40" y="162">current, mA</text>
+
+  <!-- 图例 -->
+  <path class="ret" d="M296 26 H328" />
+  <rect class="mk" x="309.5" y="23.5" width="5" height="5" />
+  <text class="lbl" x="336" y="30">return_current.i</text>
+  <path class="sig" d="M452 26 H484" />
+  <text class="lbl" x="492" y="30">signal_current.i</text>
+</svg>

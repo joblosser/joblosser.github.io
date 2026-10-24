@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" width="680" height="340" role="img" aria-label="上：电场从信号路径垂直向下落到参考路径；下：同一段结构等效成一串分布电容，两条虚线夹出的 Δz 是其中任意一小段">
+  <!--
+    上半：平面波近似下，电场垂直于导体、从信号路径落到参考路径，沿传输方向没有分量。
+    下半：同一段结构等效成一串电容。上下两栏的 x 位置一一对应，
+          说的是「两导体之间的电场」就是「分布电容」这同一件事的两种画法。
+    两条竖直虚线夹出 Δz —— 任意取的一小段，段与段之间没有耦合，所以可以单独按比例算。
+    ⚠️ 这是侧视（沿线的方向看），电场垂直向下。别和横截面那张（fig-field）搞混。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .ef    { fill: none; stroke: #00879f; stroke-width: 1.3; stroke-dasharray: 5 4; stroke-linecap: round; }
+    .ef-h  { fill: #00879f; }
+    .cap   { fill: none; stroke: #00629b; stroke-width: 1.6; stroke-linecap: round; }
+    /* Δz 的边界线是「辅助标注」，用灰、点划，别跟青色电场虚线看成一回事 */
+    .dz    { fill: none; stroke: #98a8b5; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dir   { fill: none; stroke: #8a97a3; stroke-width: 1.3; }
+    .dir-h { fill: #8a97a3; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { stroke: #00b5e2; }
+      .ef    { stroke: #7fe3f0; }
+      .ef-h  { fill: #7fe3f0; }
+      .cap   { stroke: #00b5e2; }
+      .dz    { stroke: #5b6c78; }
+      .dir   { stroke: #8b9aa7; }
+      .dir-h { fill: #8b9aa7; }
+      .lbl, .var { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- 传输方向：给出「沿这个方向没有分量」的那个方向 -->
+  <path class="dir" d="M116 40 H164" />
+  <path class="dir-h" d="M160 36 L170 40 L160 44 Z" />
+  <text class="lbl" x="180" y="44">传播方向</text>
+
+  <!-- Δz 的边界：贯穿上下两栏，表示「同一段」。位置取相邻两个电容的中点，
+       这样一段里正好是一个电容 -->
+  <path class="dz" d="M328 58 V320" />
+  <path class="dz" d="M372 58 V320" />
+
+  <!-- ==================== 上：电场 ==================== -->
+  <path class="cond" d="M104 76 H592" />
+  <path class="cond" d="M104 140 H592" />
+  <text class="lbl" x="600" y="80">信号路径</text>
+  <text class="lbl" x="600" y="144">参考路径</text>
+
+  <!-- 电场：垂直向下，沿线方向没有分量 -->
+  <path class="ef" d="M130 84 V133 M174 84 V133 M218 84 V133 M262 84 V133 M306 84 V133
+                       M350 84 V133 M394 84 V133 M438 84 V133 M482 84 V133 M526 84 V133 M570 84 V133" />
+  <path class="ef-h" d="M126 127 L130 136 L134 127 Z M170 127 L174 136 L178 127 Z
+                        M214 127 L218 136 L222 127 Z M258 127 L262 136 L266 127 Z
+                        M302 127 L306 136 L310 127 Z M346 127 L350 136 L354 127 Z
+                        M390 127 L394 136 L398 127 Z M434 127 L438 136 L442 127 Z
+                        M478 127 L482 136 L486 127 Z M522 127 L526 136 L530 127 Z
+                        M566 127 L570 136 L574 127 Z" />
+
+  <!-- Δz：任意取的一小段 -->
+  <text class="var" x="350" y="184" text-anchor="middle">Δz</text>
+  <path class="dir" d="M328 194 H372" />
+  <path class="dir-h" d="M334 190 L326 194 L334 198 Z M366 190 L374 194 L366 198 Z" />
+
+  <!-- ==================== 下：同一段的等效电容 ==================== -->
+  <path class="cond" d="M104 240 H592" />
+  <path class="cond" d="M104 304 H592" />
+  <text class="lbl" x="600" y="244">信号路径</text>
+  <text class="lbl" x="600" y="308">参考路径</text>
+
+  <path class="cap" d="M130 242 V268 M122 268 H138 M122 276 H138 M130 276 V302
+                       M174 242 V268 M166 268 H182 M166 276 H182 M174 276 V302
+                       M218 242 V268 M210 268 H226 M210 276 H226 M218 276 V302
+                       M262 242 V268 M254 268 H270 M254 276 H270 M262 276 V302
+                       M306 242 V268 M298 268 H314 M298 276 H314 M306 276 V302
+                       M350 242 V268 M342 268 H358 M342 276 H358 M350 276 V302
+                       M394 242 V268 M386 268 H402 M386 276 H402 M394 276 V302
+                       M438 242 V268 M430 268 H446 M430 276 H446 M438 276 V302
+                       M482 242 V268 M474 268 H490 M474 276 H490 M482 276 V302
+                       M526 242 V268 M518 268 H534 M518 276 H534 M526 276 V302
+                       M570 242 V268 M562 268 H578 M562 276 H578 M570 276 V302" />
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" role="img" aria-label="两个时刻 T0 和 T1：边沿向前推进，只有边沿所在位置的电容对信号起作用">
+  <!--
+    上下两栏是同一个结构在两个时刻的样子，边沿从左边推到右边。
+    关键对比：沿线的电容一直都在，但**只有边沿所在的那一小段在起作用** ——
+    边沿左边电压已经稳定、右边还没到，两处都没有电压在变，电容不参与。
+    所以「起作用」的电容（红色）始终跟着边沿跑，其余的画成淡灰。
+  -->
+  <style>
+    .wave  { fill: none; stroke: #2b3a47; stroke-width: 2; stroke-linecap: round; }
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .cap-d { fill: none; stroke: #c8d3dc; stroke-width: 1.6; stroke-linecap: round; }
+    .cap-a { fill: none; stroke: #ba0c2f; stroke-width: 2.2; stroke-linecap: round; }
+    .box   { fill: none; stroke: #ba0c2f; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    /* 范围括号：标出说明文字管的是哪一段，免得它横跨到红框下面被读成在说那个电容 */
+    .range { fill: none; stroke: #aebcc8; stroke-width: 1.3; stroke-dasharray: 4 3; }
+    .lbl   { fill: #46586a; font-size: 12px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .tt    { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+    .dim   { fill: #8a97a3; font-size: 11px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .wave  { stroke: #c9d6e0; }
+      .cond  { stroke: #00b5e2; }
+      .cap-d { stroke: #3d4c57; }
+      .cap-a { stroke: #ff7a8a; }
+      .box   { stroke: #ff7a8a; }
+      .range { stroke: #55666f; }
+      .lbl, .tt { fill: #a3b5c2; }
+      .dim   { fill: #7d8f9d; }
+    }
+  </style>
+
+  <!-- ==================== 上：T0 ==================== -->
+  <text class="tt" x="590" y="52">T<tspan dy="4" font-size="9">0</tspan></text>
+
+  <!-- 沿线电压：左边已经稳定在高电平，右边还没到 -->
+  <path class="wave" d="M80 62 H186 C197 62 207 100 218 100 H600" />
+
+  <!-- 信号路径 / 参考路径 -->
+  <path class="cond" d="M70 120 H610" />
+  <path class="cond" d="M70 160 H610" />
+
+  <!-- 已稳定区域：电容不起作用（淡） -->
+  <g class="cap-d">
+    <path d="M110 120 V136 M100 136 H120 M100 144 H120 M110 144 V160" />
+    <path d="M150 120 V136 M140 136 H160 M140 144 H160 M150 144 V160" />
+    <path d="M300 120 V136 M290 136 H310 M290 144 H310 M300 144 V160" />
+    <path d="M400 120 V136 M390 136 H410 M390 144 H410 M400 144 V160" />
+  </g>
+
+  <!-- 边沿处：真正起作用的电容 -->
+  <path class="cap-a" d="M200 120 V136 M186 136 H214 M186 146 H214 M200 146 V160" />
+  <rect class="box" x="180" y="112" width="40" height="56" rx="3" />
+
+  <!-- 范围括号 + 说明：只管边沿左边这一段 -->
+  <path class="range" d="M70 176 H172 M70 170 V182 M172 170 V182" />
+  <text class="dim" x="121" y="196" text-anchor="middle">电压已稳定</text>
+  <text class="dim" x="121" y="212" text-anchor="middle">电容不起作用</text>
+
+  <!-- ==================== 下：T1 ==================== -->
+  <text class="tt" x="590" y="232">T<tspan dy="4" font-size="9">1</tspan></text>
+
+  <path class="wave" d="M80 242 H446 C457 242 467 280 478 280 H600" />
+
+  <path class="cond" d="M70 300 H610" />
+  <path class="cond" d="M70 340 H610" />
+
+  <g class="cap-d">
+    <path d="M110 300 V316 M100 316 H120 M100 324 H120 M110 324 V340" />
+    <path d="M160 300 V316 M150 316 H170 M150 324 H170 M160 324 V340" />
+    <path d="M210 300 V316 M200 316 H220 M200 324 H220 M210 324 V340" />
+    <path d="M260 300 V316 M250 316 H270 M250 324 H270 M260 324 V340" />
+    <path d="M310 300 V316 M300 316 H320 M300 324 H320 M310 324 V340" />
+    <path d="M360 300 V316 M350 316 H370 M350 324 H370 M360 324 V340" />
+  </g>
+
+  <path class="cap-a" d="M460 300 V316 M446 316 H474 M446 326 H474 M460 326 V340" />
+  <rect class="box" x="440" y="292" width="40" height="56" rx="3" />
+
+  <!-- 范围括号 + 说明：整段（从起点到边沿前）都不再参与 -->
+  <path class="range" d="M70 356 H432 M70 350 V362 M432 350 V362" />
+  <text class="dim" x="251" y="378" text-anchor="middle">边沿过去了，这一整段的电容都不再参与</text>
+</svg>
