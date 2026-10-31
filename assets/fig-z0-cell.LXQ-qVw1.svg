@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 680 226" width="680" height="226" role="img" aria-label="一小节 LC：上面串一个电感 LΔz，中间并一个电容 CΔz，两端分别是 V(z,t) 和 V(z+Δz,t)">
+  <!--
+    照着课件「单独的一小节 LC 电路」那张图画：
+      上下两根导体是这一小段的信号路径和参考路径，
+      上面串一个 LΔz，中间并一个 CΔz。
+      左端口电压 V(z,t)、电流 I(z,t) 从左侧流入；右端口 V(z+Δz,t)、电流 I(z+Δz,t) 继续向右流出。
+      ⚠️ 右边那个电流箭头必须指向右（与课件一致）：I(z,t) 分成电容支路和继续向右的
+      I(z+Δz,t) 两路，箭头画成指左就变成「电流倒流回节点」了。
+      底下标这一小段的长度 Δz。
+    ⚠️ 下标用 <tspan dy="4">，上标用 dy="-8"，别写反。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .coil  { fill: none; stroke: #00629b; stroke-width: 1.8; }
+    .cap   { fill: none; stroke: #00629b; stroke-width: 2; }
+    .cur   { fill: none; stroke: #ba0c2f; stroke-width: 1.8; stroke-linecap: round; }
+    .cur-h { fill: #ba0c2f; }
+    .dim   { fill: none; stroke: #8a97a3; stroke-width: 1.2; }
+    .dim-h { fill: #8a97a3; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { stroke: #00b5e2; }
+      .coil  { stroke: #00b5e2; }
+      .cap   { stroke: #00b5e2; }
+      .cur   { stroke: #ff7a8a; }
+      .cur-h { fill: #ff7a8a; }
+      .dim   { stroke: #8b9aa7; }
+      .dim-h { fill: #8b9aa7; }
+      .lbl   { fill: #a3b5c2; }
+      .var   { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- 上下两根导体 -->
+  <path class="cond" d="M150 110 H300" />
+  <path class="cond" d="M380 110 H540" />
+  <path class="cond" d="M150 210 H540" />
+
+  <!-- 串联电感 LΔz -->
+  <path class="coil" d="M300 110 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0" />
+  <text class="var" x="340" y="84" text-anchor="middle">L<tspan dy="4" font-size="9">Δz</tspan></text>
+
+  <!-- 并联电容 CΔz -->
+  <path class="cap" d="M470 110 V148 M470 156 V210" />
+  <path class="cap" d="M459 148 H481 M459 156 H481" />
+  <text class="var" x="492" y="158">C<tspan dy="4" font-size="9">Δz</tspan></text>
+
+  <!-- 左端口：V(z,t) -->
+  <path class="dim" d="M132 110 V210" />
+  <path class="dim-h" d="M128 116 L132 108 L136 116 Z M128 204 L132 212 L136 204 Z" />
+  <text class="var" x="124" y="166" text-anchor="end">V<tspan dy="4" font-size="9">(z,t)</tspan></text>
+
+  <!-- 右端口：V(z+Δz,t) -->
+  <path class="dim" d="M558 110 V210" />
+  <path class="dim-h" d="M554 116 L558 108 L562 116 Z M554 204 L558 212 L562 204 Z" />
+  <text class="var" x="566" y="166">V<tspan dy="4" font-size="9">(z+Δz,t)</tspan></text>
+
+  <!-- 电流 -->
+  <path class="cur" d="M166 110 H202" />
+  <path class="cur-h" d="M196 105 L208 110 L196 115 Z" />
+  <text class="var" x="184" y="96" text-anchor="middle">I<tspan dy="4" font-size="9">(z,t)</tspan></text>
+
+  <path class="cur" d="M482 110 H518" />
+  <path class="cur-h" d="M512 105 L524 110 L512 115 Z" />
+  <text class="var" x="506" y="96" text-anchor="middle">I<tspan dy="4" font-size="9">(z+Δz,t)</tspan></text>
+
+  <!-- 这一小段的长度 Δz -->
+  <path class="dim" d="M150 246 H540" />
+  <path class="dim-h" d="M156 242 L148 246 L156 250 Z M534 242 L542 246 L534 250 Z" />
+  <text class="var" x="345" y="270" text-anchor="middle">Δz</text>
+</svg>

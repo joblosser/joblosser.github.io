@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" role="img" aria-label="表层微带线与内层带状线的典型横截面：走线均 6 mil 宽；表层一侧介质 3.6 mil、只有下方一个参考平面；内层上下各 8 mil 介质、上下都是参考平面。对应单位长度电感 7.5 / 9 nH/in、单位长度电容 3 / 3.5 pF/in">
+  <!-- 坐标由 gen-e09.cjs 算出，不手写。下标 <tspan baseline-shift="sub">。 -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7d3f98; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  .arrow{ fill:#2b3a47; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .ring { fill:none; stroke:#00629b; stroke-width:1.4; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .src  { fill:#00629b; }
+  .cLh  { fill:#00629b; }
+  .cZh  { fill:#2f7d32; }
+  .cPh  { fill:#7d3f98; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cP { stroke:#c792ea; } .cZ { stroke:#7ed957; }
+    .ax { stroke:#8b9aa7; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .arrow { fill:#e8eef3; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+    .ring { stroke:#00b5e2; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .src { fill:#00b5e2; }
+    .cLh { fill:#00b5e2; }
+    .cZh { fill:#7ed957; }
+    .cPh { fill:#c792ea; }
+  }
+</style>
+<rect class="di" x="68" y="125" width="200" height="36" /><rect class="pl" x="68" y="161" width="200" height="12" /><rect class="cu" x="148" y="116" width="40" height="9" /><text class="sm" x="76" y="153">介质 ε<tspan baseline-shift="sub" font-size="9">r</tspan> = 4.4</text><path class="dim" d="M148 106 H188" /><path class="dimh" d="M153 103 L148 106 L153 109 Z M183 103 L188 106 L183 109 Z" /><text class="sm" x="168" y="100" text-anchor="middle">6 mil</text><path class="dim" d="M282 125 V161" /><path class="dimh" d="M279 130 L282 125 L285 130 Z M279 156 L282 161 L285 156 Z" /><text class="sm" x="289" y="147" text-anchor="start">3.6 mil</text><text class="lbl" x="168" y="80" text-anchor="middle" style="font-size:13px">表层（微带线）</text><text class="sm" x="168" y="195" text-anchor="middle">L ≈ 7.5 nH/in</text><text class="sm" x="168" y="211" text-anchor="middle">C ≈ 3 pF/in</text><rect class="pl" x="400" y="100" width="200" height="12" /><rect class="di" x="400" y="112" width="200" height="95" /><rect class="pl" x="400" y="207" width="200" height="12" /><rect class="cu" x="480" y="155" width="40" height="9" /><text class="sm" x="408" y="128">介质 ε<tspan baseline-shift="sub" font-size="9">r</tspan> = 4.4</text><path class="dim" d="M480 145 H520" /><path class="dimh" d="M485 142 L480 145 L485 148 Z M515 142 L520 145 L515 148 Z" /><text class="sm" x="500" y="139" text-anchor="middle">6 mil</text><path class="dim" d="M614 112 V155" /><path class="dimh" d="M611 117 L614 112 L617 117 Z M611 150 L614 155 L617 150 Z" /><text class="sm" x="621" y="137.5" text-anchor="start">8 mil</text><path class="dim" d="M614 164 V207" /><path class="dimh" d="M611 169 L614 164 L617 169 Z M611 202 L614 207 L617 202 Z" /><text class="sm" x="621" y="189.5" text-anchor="start">8 mil</text><text class="lbl" x="500" y="80" text-anchor="middle" style="font-size:13px">内层（带状线）</text><text class="sm" x="500" y="241" text-anchor="middle">L ≈ 9 nH/in</text><text class="sm" x="500" y="257" text-anchor="middle">C ≈ 3.5 pF/in</text>
+</svg>

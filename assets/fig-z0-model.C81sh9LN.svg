@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 44 680 244" width="680" height="244" role="img" aria-label="传输线切成小段：上面是一条信号路径和一条参考路径，下面拆成一级一级的 LC，每一级是一个串联电感和一个并联电容">
+  <!--
+    照着课件「传输线的等效模型」那张图画，分上下两栏：
+      上：信号路径 + 介质 + 参考路径，就是一条传输线。
+      下：把它切成一小段一小段，每一段用一个 LC 表示（串联电感 + 并联电容）。
+    中间用一个向下的箭头把两栏接起来，表示「这样切」。
+    节点在 x=120 / 260 / 400 / 540，三段等长；每段的串联电感居中（60 宽），
+    其余是导线 —— 所以上轨的导线是「段间连接处」而不是每段各画一段。
+    ⚠️ 下标用 <tspan dy="4">，上标用 dy="-8"，别写反。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .coil  { fill: none; stroke: #00629b; stroke-width: 1.8; }
+    .cap   { fill: none; stroke: #00629b; stroke-width: 2; }
+    .diel  { fill: #f2ede2; }
+    .cur   { fill: none; stroke: #ba0c2f; stroke-width: 1.8; stroke-linecap: round; }
+    .cur-h { fill: #ba0c2f; }
+    .arw   { fill: none; stroke: #8a97a3; stroke-width: 1.4; }
+    .arw-h { fill: #8a97a3; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { stroke: #00b5e2; }
+      .coil  { stroke: #00b5e2; }
+      .cap   { stroke: #00b5e2; }
+      .diel  { fill: #2b2620; }
+      .cur   { stroke: #ff7a8a; }
+      .cur-h { fill: #ff7a8a; }
+      .arw   { stroke: #8b9aa7; }
+      .arw-h { fill: #8b9aa7; }
+      .lbl   { fill: #a3b5c2; }
+      .var   { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- ==================== 上：一条传输线 ==================== -->
+  <rect class="diel" x="150" y="56" width="420" height="48" />
+  <path class="cond" d="M150 56 H570" />
+  <path class="cond" d="M150 104 H570" />
+
+  <path class="cur" d="M188 56 H224" />
+  <path class="cur-h" d="M218 51 L230 56 L218 61 Z" />
+  <path class="cur" d="M532 104 H496" />
+  <path class="cur-h" d="M502 99 L490 104 L502 109 Z" />
+
+  <text class="lbl" x="140" y="60" text-anchor="end">信号路径</text>
+  <text class="lbl" x="140" y="108" text-anchor="end">参考路径</text>
+
+  <!-- ==================== 中：切分的箭头 ==================== -->
+  <path class="arw" d="M360 130 V166" />
+  <path class="arw-h" d="M355 160 L360 170 L365 160 Z" />
+  <text class="lbl" x="374" y="152">切成一小段一小段</text>
+
+  <!-- ==================== 下：一级一级的 LC ==================== -->
+  <!-- 上轨：只在段与段的连接处有导线，每段中间是一个串联电感 -->
+  <path class="cond" d="M120 210 H160 M220 210 H300 M360 210 H440 M500 210 H540" />
+  <!-- 串联电感（每段三个半圆鼓包） -->
+  <path class="coil" d="M160 210 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0
+                        M300 210 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0
+                        M440 210 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0 a10 9 0 0 1 20 0" />
+  <!-- 下轨 -->
+  <path class="cond" d="M120 272 H540" />
+
+  <!-- 并联电容：四个节点各一个 -->
+  <path class="cap" d="M120 210 V230 M120 238 V272
+                       M260 210 V230 M260 238 V272
+                       M400 210 V230 M400 238 V272
+                       M540 210 V230 M540 238 V272" />
+  <path class="cap" d="M109 230 H131 M109 238 H131
+                       M249 230 H271 M249 238 H271
+                       M389 230 H411 M389 238 H411
+                       M529 230 H551 M529 238 H551" />
+
+  <!-- 参数标注 -->
+  <text class="var" x="190" y="192" text-anchor="middle">L<tspan dy="4" font-size="9">Δz</tspan></text>
+  <text class="var" x="276" y="226">C<tspan dy="4" font-size="9">Δz</tspan></text>
+</svg>

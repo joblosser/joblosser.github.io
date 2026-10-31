@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="680" height="320" role="img" aria-label="一阶 RC 低通与它的阶跃响应：左侧红色阶跃输入经 R、C 输出；右侧指数上升曲线，10% 与 90% 两个电平之间的时间就是上升时间 tr">
+  <!--
+    坐标由 gen-e02.cjs 算出，不手写。下标 <tspan dy="4">，上标 <tspan dy="-8">。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7d3f98; stroke-width:2.2; stroke-linecap:round; }
+  .cS   { fill:none; stroke:#ba0c2f; stroke-width:2.6; stroke-linecap:round; }
+  .band { fill:#ba0c2f; opacity:.07; }
+  .bandlg { fill:#ba0c2f; opacity:.30; }
+  .base { fill:none; stroke:#8a97a3; stroke-width:1.3; opacity:.75; }
+  .stem { fill:none; stroke:#00629b; stroke-width:1; opacity:.85; }
+  /* 包络线要细、淡、点状：视频里它是一条很浅的点线，高频端谱线密到亚像素时才不会把蓝色谱线整片盖掉。
+     注意：这段样式在模板字符串里，只能用 CSS 注释，写成双斜杠会把 .envr 整条规则吃掉（CSS 注释也不能嵌套） */
+  .envr { fill:none; stroke:#ba0c2f; stroke-width:1; stroke-dasharray:2 3; opacity:.75; }
+  .arr  { fill:none; stroke:#2b3a47; stroke-width:1.6; stroke-dasharray:5 3; }
+  .arrh { fill:#2b3a47; }
+  /* 梯形波的渐近线一律画实线、理想方波一律画虚线（课件原话：「上面这个虚线是理想方波的…，
+     下面三条折线的这个是梯形波的」）。同一篇笔记里的两张渐近线图必须共用这套线型，别一张一个样 */
+  .asym { fill:none; stroke:#00629b; stroke-width:2; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  /* 灰色虚线：理想方波的渐近线。视频里虚线画的是理想方波，实线才是梯形波，别搞反 */
+  .refd { fill:none; stroke:#8a97a3; stroke-width:1.7; stroke-dasharray:7 5; }
+  .env  { fill:none; stroke:#8a97a3; stroke-width:1.1; stroke-dasharray:3 3; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dot  { fill:#00629b; }
+  .dotr { fill:#ba0c2f; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* 3 dB 带宽电平线：红细实线（红 = 参考量，不占数据色）。课件那张图上就是一条横贯全宽的红线，
+     而且线上一个数字都没标 —— 这条线的位置是示意，不代表真实的 dB 值 */
+  .db3  { fill:none; stroke:#ba0c2f; stroke-width:1.6; }
+  .dot3 { fill:#ba0c2f; }
+  /* 红字：只给「有真实 dB 轴」的图用（fig-e02-rcbw 标 −3 dB）。示意图上不许标 dB 数值 */
+  .smr  { fill:#ba0c2f; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* 空心端子（电路图的引脚小圈）：fill:none，任何背景色都透得过去 */
+  .ring { fill:none; stroke:#00629b; stroke-width:1.4; }
+  .cr   { fill:#ba0c2f; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .cP { stroke:#c792ea; } .cS { stroke:#ff7a8a; }
+    .band { fill:#ff7a8a; opacity:.08; }
+    .bandlg { fill:#ff7a8a; opacity:.38; }
+    .base { stroke:#8b9aa7; }
+    .stem { stroke:#00b5e2; }
+    .envr { stroke:#ff7a8a; }
+    .arr { stroke:#e8eef3; } .arrh { fill:#e8eef3; }
+    .asym { stroke:#00b5e2; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .refd { stroke:#c9d5de; }
+    .env { stroke:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .dot { fill:#00b5e2; } .dotr { fill:#ff7a8a; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+    .db3 { stroke:#ff7a8a; } .dot3 { fill:#ff7a8a; } .smr { fill:#ff7a8a; }
+    .ring { stroke:#00b5e2; } .cr { fill:#ff7a8a; }
+  }
+</style>
+<path class="cC" d="M40.0 194.0 L58.0 194.0 L58.0 128.0 L74.0 128.0" /><path class="cr" d="M58 128 L54 137 L62 137 Z" /><circle class="ring" cx="100" cy="128" r="3.6" /><path class="ln2" d="M103.6 128 H142" /><path class="ln2" d="M142.0 128.0 L149.1 119.0 L156.3 137.0 L163.4 119.0 L170.6 137.0 L177.7 119.0 L184.9 137.0 L192.0 128.0" /><path class="ln2" d="M192 128 H296.4" /><circle class="dot" cx="252" cy="128" r="2.6" /><circle class="ring" cx="300" cy="128" r="3.6" /><path class="ln2" d="M252 128 V176" /><path class="ln2" d="M237 176 H267" /><path class="ln2" d="M237 185 Q252 194 267 185" /><path class="ln2" d="M252 190 V204" /><path class="ln2" d="M236 204 H268" /><path class="ln2" d="M242 210 H262" /><path class="ln2" d="M248 216 H256" /><text class="var" x="100" y="156" text-anchor="middle">V<tspan baseline-shift="sub" font-size="9">in</tspan></text><text class="var" x="167" y="112" text-anchor="middle">R</text><text class="var" x="230" y="186" text-anchor="end">C</text><text class="var" x="300" y="156" text-anchor="middle">V<tspan baseline-shift="sub" font-size="9">out</tspan></text><path class="ax" d="M372 56 V250 H652" /><path class="dimh" d="M652 250 L644 246 L644 254 Z" /><path class="dimh" d="M372 56 L368 64 L376 64 Z" /><text class="var" x="660" y="255">t</text><text class="lbl" transform="translate(338 153) rotate(-90)" text-anchor="middle">幅度 V</text><text class="tick" x="365" y="224.3" text-anchor="end">0.2</text><text class="tick" x="365" y="194.9" text-anchor="end">0.4</text><text class="tick" x="365" y="165.6" text-anchor="end">0.6</text><text class="tick" x="365" y="136.3" text-anchor="end">0.8</text><text class="tick" x="365" y="106.9" text-anchor="end">1.0</text><text class="tick" x="365" y="77.6" text-anchor="end">1.2</text><path class="dim" d="M372.0 250 v4" /><text class="tick" x="372.0" y="268" text-anchor="middle">0</text><path class="dim" d="M423.6 250 v4" /><text class="tick" x="423.6" y="268" text-anchor="middle">0.2</text><path class="dim" d="M475.2 250 v4" /><text class="tick" x="475.2" y="268" text-anchor="middle">0.4</text><path class="dim" d="M526.8 250 v4" /><text class="tick" x="526.8" y="268" text-anchor="middle">0.6</text><path class="dim" d="M578.4 250 v4" /><text class="tick" x="578.4" y="268" text-anchor="middle">0.8</text><path class="dim" d="M630.0 250 v4" /><text class="tick" x="630.0" y="268" text-anchor="middle">1.0</text><path class="env" d="M372 235.3 H652" /><path class="env" d="M372 118.0 H652" /><path class="cL" d="M372.0 250.0 L373.0 244.2 L374.0 238.6 L375.0 233.3 L376.0 228.2 L377.0 223.2 L378.0 218.5 L378.9 214.0 L379.9 209.6 L380.9 205.4 L381.9 201.4 L382.9 197.5 L383.9 193.8 L384.9 190.2 L385.9 186.8 L386.9 183.5 L387.9 180.3 L388.9 177.3 L389.9 174.4 L390.9 171.6 L391.8 168.9 L392.8 166.3 L393.8 163.8 L394.8 161.4 L395.8 159.1 L396.8 156.9 L397.8 154.8 L398.8 152.8 L399.8 150.8 L400.8 148.9 L401.8 147.1 L402.8 145.4 L403.8 143.8 L404.7 142.2 L405.7 140.6 L406.7 139.2 L407.7 137.7 L408.7 136.4 L409.7 135.1 L410.7 133.8 L411.7 132.6 L412.7 131.5 L413.7 130.4 L414.7 129.3 L415.7 128.3 L416.7 127.3 L417.6 126.3 L418.6 125.4 L419.6 124.6 L420.6 123.7 L421.6 122.9 L422.6 122.1 L423.6 121.4 L424.6 120.7 L425.6 120.0 L426.6 119.3 L427.6 118.7 L428.6 118.1 L429.6 117.5 L430.5 117.0 L431.5 116.4 L432.5 115.9 L433.5 115.4 L434.5 114.9 L435.5 114.5 L436.5 114.0 L437.5 113.6 L438.5 113.2 L439.5 112.8 L440.5 112.4 L441.5 112.1 L442.5 111.7 L443.4 111.4 L444.4 111.1 L445.4 110.8 L446.4 110.5 L447.4 110.2 L448.4 109.9 L449.4 109.7 L450.4 109.4 L451.4 109.2 L452.4 109.0 L453.4 108.7 L454.4 108.5 L455.4 108.3 L456.3 108.1 L457.3 107.9 L458.3 107.7 L459.3 107.6 L460.3 107.4 L461.3 107.2 L462.3 107.1 L463.3 106.9 L464.3 106.8 L465.3 106.7 L466.3 106.5 L467.3 106.4 L468.3 106.3 L469.2 106.2 L470.2 106.1 L471.2 105.9 L472.2 105.8 L473.2 105.7 L474.2 105.6 L475.2 105.6 L476.2 105.5 L477.2 105.4 L478.2 105.3 L479.2 105.2 L480.2 105.2 L481.2 105.1 L482.1 105.0 L483.1 104.9 L484.1 104.9 L485.1 104.8 L486.1 104.8 L487.1 104.7 L488.1 104.7 L489.1 104.6 L490.1 104.5 L491.1 104.5 L492.1 104.5 L493.1 104.4 L494.1 104.4 L495.0 104.3 L496.0 104.3 L497.0 104.3 L498.0 104.2 L499.0 104.2 L500.0 104.1 L501.0 104.1 L502.0 104.1 L503.0 104.1 L504.0 104.0 L505.0 104.0 L506.0 104.0 L507.0 103.9 L507.9 103.9 L508.9 103.9 L509.9 103.9 L510.9 103.9 L511.9 103.8 L512.9 103.8 L513.9 103.8 L514.9 103.8 L515.9 103.8 L516.9 103.7 L517.9 103.7 L518.9 103.7 L519.9 103.7 L520.8 103.7 L521.8 103.7 L522.8 103.7 L523.8 103.6 L524.8 103.6 L525.8 103.6 L526.8 103.6 L527.8 103.6 L528.8 103.6 L529.8 103.6 L530.8 103.6 L531.8 103.6 L532.8 103.5 L533.7 103.5 L534.7 103.5 L535.7 103.5 L536.7 103.5 L537.7 103.5 L538.7 103.5 L539.7 103.5 L540.7 103.5 L541.7 103.5 L542.7 103.5 L543.7 103.5 L544.7 103.5 L545.7 103.5 L546.6 103.5 L547.6 103.5 L548.6 103.4 L549.6 103.4 L550.6 103.4 L551.6 103.4 L552.6 103.4 L553.6 103.4 L554.6 103.4 L555.6 103.4 L556.6 103.4 L557.6 103.4 L558.6 103.4 L559.5 103.4 L560.5 103.4 L561.5 103.4 L562.5 103.4 L563.5 103.4 L564.5 103.4 L565.5 103.4 L566.5 103.4 L567.5 103.4 L568.5 103.4 L569.5 103.4 L570.5 103.4 L571.5 103.4 L572.4 103.4 L573.4 103.4 L574.4 103.4 L575.4 103.4 L576.4 103.4 L577.4 103.4 L578.4 103.4 L579.4 103.4 L580.4 103.4 L581.4 103.4 L582.4 103.4 L583.4 103.4 L584.4 103.4 L585.3 103.4 L586.3 103.4 L587.3 103.4 L588.3 103.4 L589.3 103.4 L590.3 103.4 L591.3 103.4 L592.3 103.4 L593.3 103.4 L594.3 103.4 L595.3 103.4 L596.3 103.3 L597.3 103.3 L598.2 103.3 L599.2 103.3 L600.2 103.3 L601.2 103.3 L602.2 103.3 L603.2 103.3 L604.2 103.3 L605.2 103.3 L606.2 103.3 L607.2 103.3 L608.2 103.3 L609.2 103.3 L610.2 103.3 L611.1 103.3 L612.1 103.3 L613.1 103.3 L614.1 103.3 L615.1 103.3 L616.1 103.3 L617.1 103.3 L618.1 103.3 L619.1 103.3 L620.1 103.3 L621.1 103.3 L622.1 103.3 L623.1 103.3 L624.0 103.3 L625.0 103.3 L626.0 103.3 L627.0 103.3 L628.0 103.3 L629.0 103.3 L630.0 103.3" /><path class="dim" d="M374.6 250 V235.3" stroke-dasharray="3 3" /><text class="var" x="381.6" y="268">t<tspan baseline-shift="sub" font-size="9">10</tspan></text><path class="dim" d="M428.7 250 V118.0" stroke-dasharray="3 3" /><text class="var" x="435.7" y="268">t<tspan baseline-shift="sub" font-size="9">90</tspan></text><path class="dimr" d="M374.6 284 H428.7" /><path class="dimr" d="M374.6 279 V289" /><path class="dimr" d="M428.7 279 V289" /><text class="var" x="401.7" y="300" text-anchor="middle">t<tspan baseline-shift="sub" font-size="9">r</tspan></text>
+</svg>

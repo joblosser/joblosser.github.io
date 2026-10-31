@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 232" width="680" height="232" role="img" aria-label="传输线的集总模型：信号路径与参考路径之间，按 Δz 一段一段挂着一串集总电容">
+  <!--
+    照着课件「传输线建模」那张图画：
+      两根导体（信号路径 / 参考路径），中间按等间距挂一串集总电容。
+      两条竖直虚线夹出 Δz —— 就是「任意取的一小段」，一段里正好是一个电容。
+    和 fig-cap-edge / fig-cap-field 的区别：那两张讲的是「电场 / 分布」，
+    这张讲的是**建模** —— 整条线被切成非常多小段，每段当成一个集总元件来对待。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .cap   { fill: none; stroke: #00629b; stroke-width: 1.6; stroke-linecap: round; }
+    /* Δz 的边界线是「辅助标注」，用灰、点划，别跟导体看成一回事 */
+    .dz    { fill: none; stroke: #98a8b5; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim   { fill: none; stroke: #8a97a3; stroke-width: 1.3; }
+    .dim-h { fill: #8a97a3; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { stroke: #00b5e2; }
+      .cap   { stroke: #00b5e2; }
+      .dz    { stroke: #5b6c78; }
+      .dim   { stroke: #8b9aa7; }
+      .dim-h { fill: #8b9aa7; }
+      .lbl, .var { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- Δz 的边界：位置取相邻两个电容的中点，这样一段里正好是一个电容 -->
+  <path class="dz" d="M300 60 V186" />
+  <path class="dz" d="M360 60 V186" />
+
+  <!-- ==================== 信号路径 / 参考路径 ==================== -->
+  <path class="cond" d="M100 80 H592" />
+  <path class="cond" d="M100 160 H592" />
+  <text class="lbl" x="600" y="84">信号路径</text>
+  <text class="lbl" x="600" y="164">参考路径</text>
+
+  <!-- 一串集总电容 -->
+  <path class="cap" d="M150 82 V116 M143 116 H157 M143 124 H157 M150 124 V158
+                       M210 82 V116 M203 116 H217 M203 124 H217 M210 124 V158
+                       M270 82 V116 M263 116 H277 M263 124 H277 M270 124 V158
+                       M330 82 V116 M323 116 H337 M323 124 H337 M330 124 V158
+                       M390 82 V116 M383 116 H397 M383 124 H397 M390 124 V158
+                       M450 82 V116 M443 116 H457 M443 124 H457 M450 124 V158
+                       M510 82 V116 M503 116 H517 M503 124 H517 M510 124 V158
+                       M570 82 V116 M563 116 H577 M563 124 H577 M570 124 V158" />
+
+  <!-- Δz：任意取的一小段 -->
+  <text class="var" x="330" y="194" text-anchor="middle">Δz</text>
+  <path class="dim" d="M300 206 H360" />
+  <path class="dim-h" d="M306 202 L298 206 L306 210 Z M354 202 L362 206 L354 210 Z" />
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" role="img" aria-label="多导体系统的电容矩阵：两根走线与下方参考平面两两之间存在电容">
+  <!--
+    横截面。两根走线在上，一块参考平面在下，任意两个导体之间都有电容：
+      C10 / C20 是走线对平面的电容，C12 是两根走线之间的电容。
+    ⚠️ 只画两根 —— 多导体系统里两两之间都有电容，两根 + 一个平面
+       已经把 C10 / C20 / C12（以及对称的 C21）全占满了。
+       多画一根却只标两条线，读者会以为漏了标注。
+    电容符号是「两条平行短线」，极板方向要垂直于连线：
+      竖直连线（走线→平面）用横极板，水平连线（走线→走线）用竖极板。
+  -->
+  <style>
+    .diel  { fill: #eef3f7; }
+    .plane { fill: #9aa8b4; }
+    .trace { fill: #00629b; }
+    .lead  { fill: none; stroke: #5a6c7d; stroke-width: 1; stroke-dasharray: 3 3; }
+    .cap   { fill: none; stroke: #ba0c2f; stroke-width: 2; stroke-linecap: round; }
+    .lbl   { fill: #46586a; font-size: 12px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; }
+    .sub   { font-size: 10px; }
+    .red   { fill: #ba0c2f; }
+
+    @media (prefers-color-scheme: dark) {
+      .diel  { fill: #161a1e; }
+      .plane { fill: #6b7a86; }
+      .trace { fill: #00b5e2; }
+      .lead  { stroke: #7d8f9d; }
+      .cap   { stroke: #ff7a8a; }
+      .lbl   { fill: #a3b5c2; }
+      .red   { fill: #ff7a8a; }
+    }
+  </style>
+
+  <!-- 介质 -->
+  <rect class="diel" x="130" y="62" width="420" height="180" />
+
+  <!-- 参考平面 -->
+  <rect class="plane" x="130" y="242" width="420" height="16" />
+  <text class="lbl" x="130" y="280">参考平面</text>
+
+  <!-- 两根走线 -->
+  <rect class="trace" x="190" y="90" width="80" height="22" rx="2" />
+  <rect class="trace" x="400" y="90" width="80" height="22" rx="2" />
+  <text class="lbl" x="230" y="80" text-anchor="middle">1</text>
+  <text class="lbl" x="440" y="80" text-anchor="middle">2</text>
+
+  <!-- C10：走线 1 到平面 -->
+  <path class="lead" d="M230 112 V172" />
+  <path class="cap" d="M214 172 H246" />
+  <path class="cap" d="M214 182 H246" />
+  <path class="lead" d="M230 182 V242" />
+  <text class="lbl red" x="256" y="181">
+    <tspan class="var">C</tspan><tspan class="sub" dy="4">10</tspan>
+  </text>
+
+  <!-- C20：走线 2 到平面 -->
+  <path class="lead" d="M440 112 V172" />
+  <path class="cap" d="M424 172 H456" />
+  <path class="cap" d="M424 182 H456" />
+  <path class="lead" d="M440 182 V242" />
+  <text class="lbl red" x="466" y="181">
+    <tspan class="var">C</tspan><tspan class="sub" dy="4">20</tspan>
+  </text>
+
+  <!-- C12：走线 1 与走线 2 之间 -->
+  <path class="lead" d="M270 101 H326" />
+  <path class="cap" d="M326 90 V112" />
+  <path class="cap" d="M336 90 V112" />
+  <path class="lead" d="M336 101 H400" />
+  <text class="lbl red" x="331" y="82" text-anchor="middle">
+    <tspan class="var">C</tspan><tspan class="sub" dy="4">12</tspan>
+  </text>
+</svg>

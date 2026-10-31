@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 262" width="680" height="262" role="img" aria-label="侧视图：脉冲源驱动，信号路径上电流向右，参考路径上返回电流向左，中间的电流环路不断向前推移">
+  <!--
+    侧视（沿线方向看）。照着课件右下那张原理图画：
+      信号路径上电流 I 向右 → 在波前处拐下来（红色半圆）→ 参考路径上返回电流向左。
+      一个个这样的环路不断向右推移。
+    ⚠️ 这张是**侧视**：磁场垂直纸面，所以用 ⊗；电场在两根导体之间，竖直向下。
+       别和横截面那张（fig-field）搞混，那张的磁场是同心圆。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: #00629b; }
+    .wire  { fill: none; stroke: #5a6c7d; stroke-width: 1.4; }
+    .cur   { fill: none; stroke: #ba0c2f; stroke-width: 2; stroke-linecap: round; }
+    .cur-h { fill: #ba0c2f; }
+    .loop  { fill: none; stroke: #ba0c2f; stroke-width: 2; stroke-linecap: round; }
+    .e     { fill: none; stroke: #00879f; stroke-width: 1.3; stroke-dasharray: 4 4; }
+    .e-h   { fill: #00879f; }
+    .b     { fill: none; stroke: #5a6c7d; stroke-width: 1.1; }
+    /* 推移箭头是「辅助说明」，不是数据本身 —— 用灰、细、空心头，
+       免得跟上面那条青色的电场虚线看成一回事。 */
+    .prop  { fill: none; stroke: #8a97a3; stroke-width: 1.5; stroke-dasharray: 5 4; stroke-linecap: round; }
+    .prop-h{ fill: #8a97a3; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 13px; }
+    .red   { fill: #ba0c2f; }
+    .mk-red { fill: #ba0c2f; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { fill: #00b5e2; }
+      .wire  { stroke: #7d8f9d; }
+      .cur   { stroke: #ff7a8a; }
+      .cur-h { fill: #ff7a8a; }
+      .loop  { stroke: #ff7a8a; }
+      .e     { stroke: #7fe3f0; }
+      .e-h   { fill: #7fe3f0; }
+      .b     { stroke: #a3b5c2; }
+      .prop  { stroke: #8b9aa7; }
+      .prop-h{ fill: #8b9aa7; }
+      .lbl   { fill: #a3b5c2; }
+      .red   { fill: #ff7a8a; }
+      .mk-red { fill: #ff7a8a; }
+    }
+  </style>
+
+  <defs>
+    <marker id="loophead" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="4" markerHeight="4" orient="auto">
+      <path class="mk-red" d="M0 0 L10 5 L0 10 Z" />
+    </marker>
+  </defs>
+
+  <!-- 顶部小图例 -->
+  <path class="e" d="M146 24 H164" />
+  <path class="e-h" d="M160 19 L168 24 L160 29 Z" />
+  <text class="lbl" x="174" y="28">电场 E</text>
+  <circle class="b" cx="262" cy="24" r="6" />
+  <path class="b" d="M258.2 20.2 L265.8 27.8 M265.8 20.2 L258.2 27.8" />
+  <text class="lbl" x="276" y="28">磁场 B（垂直纸面）</text>
+
+  <!-- 脉冲源 -->
+  <circle class="wire" cx="100" cy="147" r="20" />
+  <path class="wire" d="M90 153 H96 V141 H104 V153 H110" stroke-width="1.2" />
+  <path class="wire" d="M100 127 V94 H140" />
+  <path class="wire" d="M100 167 V200 H140" />
+  <path class="wire" d="M100 200 V214" />
+  <path class="wire" d="M90 214 H110 M94 219 H106 M97 224 H103" />
+  <text class="lbl red" x="115" y="124">+</text>
+  <text class="lbl red" x="115" y="180">−</text>
+
+  <!-- 两根导体 -->
+  <rect class="cond" x="140" y="86" width="470" height="16" rx="2" />
+  <rect class="cond" x="140" y="192" width="470" height="16" rx="2" />
+  <text class="lbl" x="622" y="100">信号路径</text>
+  <text class="lbl" x="622" y="206">参考路径</text>
+
+  <!-- 信号电流：向右 -->
+  <path class="cur" d="M180 76 H217" />
+  <path class="cur-h" d="M213 70 L225 76 L213 82 Z" />
+  <text class="lbl var red" x="233" y="81">I</text>
+  <path class="cur" d="M400 76 H437" />
+  <path class="cur-h" d="M433 70 L445 76 L433 82 Z" />
+  <text class="lbl var red" x="453" y="81">I</text>
+
+  <!-- 返回电流：向左 -->
+  <path class="cur" d="M225 222 H188" />
+  <path class="cur-h" d="M192 216 L180 222 L192 228 Z" />
+  <path class="cur" d="M445 222 H408" />
+  <path class="cur-h" d="M412 216 L400 222 L412 228 Z" />
+  <text class="lbl red" x="300" y="246">返回电流</text>
+
+  <!-- 电场：两导体之间，竖直向下 -->
+  <path class="e" d="M255 110 V174" />
+  <path class="e-h" d="M250 170 L255 182 L260 170 Z" />
+  <path class="e" d="M475 110 V174" />
+  <path class="e-h" d="M470 170 L475 182 L480 170 Z" />
+
+  <!-- 磁场：垂直纸面 -->
+  <g class="b">
+    <circle cx="210" cy="147" r="6" />
+    <path d="M206.2 143.2 L213.8 150.8 M213.8 143.2 L206.2 150.8" />
+    <circle cx="430" cy="147" r="6" />
+    <path d="M426.2 143.2 L433.8 150.8 M433.8 143.2 L426.2 150.8" />
+  </g>
+
+  <!-- 电流环路：电流在波前处拐下去，再沿参考路径返回 -->
+  <path class="loop" d="M300 102 C 336 128, 336 166, 302 190" marker-end="url(#loophead)" />
+  <path class="loop" d="M520 102 C 556 128, 556 166, 522 190" marker-end="url(#loophead)" />
+
+  <!-- 环路向前推移 -->
+  <path class="prop" d="M356 147 H384" />
+  <path class="prop-h" d="M378 140 L394 147 L378 154 Z" />
+  <path class="prop" d="M566 147 H596" />
+  <path class="prop-h" d="M590 140 L606 147 L590 154 Z" />
+</svg>

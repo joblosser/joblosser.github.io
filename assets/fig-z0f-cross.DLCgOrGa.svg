@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" role="img" aria-label="传输线横截面：上面是信号走线，中间是介质，下面是很宽的参考平面，电力线从走线垂直指向平面">
+  <!--
+    坐标由 gen-z0f.cjs 算出，不手写。
+    ⚠️ 下标 <tspan dy="4">、上标 <tspan dy="-8">，正负号别写反。
+    颜色写死（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .fld  { fill:none; stroke:#00629b; stroke-width:1; opacity:.6; }
+  .fldh { fill:#00629b; opacity:.7; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#00796b; stroke-width:2.2; stroke-linecap:round; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .cu   { fill:#ccd9e6; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#eef4f9; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#d9e3ec; stroke:#00629b; stroke-width:1.6; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; } .fld { stroke:#00b5e2; }
+    .fldh { fill:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#4db6ac; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .cu { fill:#31495e; stroke:#00b5e2; } .di { fill:#182631; stroke:#00b5e2; }
+    .pl { fill:#22374a; stroke:#00b5e2; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+  }
+</style>
+<rect class="di" x="128" y="160" width="480" height="86" /><rect class="pl" x="128" y="246" width="480" height="10" /><rect class="cu" x="328" y="128" width="80" height="32" /><path class="fld" d="M341.3 160 V241" /><path class="fldh" d="M338.1 240.5 L341.3 246 L344.5 240.5 Z" /><path class="fld" d="M354.7 160 V241" /><path class="fldh" d="M351.5 240.5 L354.7 246 L357.9 240.5 Z" /><path class="fld" d="M368.0 160 V241" /><path class="fldh" d="M364.8 240.5 L368.0 246 L371.2 240.5 Z" /><path class="fld" d="M381.3 160 V241" /><path class="fldh" d="M378.1 240.5 L381.3 246 L384.5 240.5 Z" /><path class="fld" d="M394.7 160 V241" /><path class="fldh" d="M391.5 240.5 L394.7 246 L397.9 240.5 Z" /><text class="sm" x="368" y="272" text-anchor="middle">参考平面（画得很宽）</text><text class="var" x="368" y="199" text-anchor="middle">ε<tspan dy="4" font-size="9">r</tspan></text><text class="sm" x="368" y="215" text-anchor="middle">介电常数</text><path class="dim" d="M328 128 V108 M408 128 V108" /><path class="dim" d="M328 108 H408" />
+  <path class="dimh" d="M334 105 L328 108 L334 111 Z M402 105 L408 108 L402 111 Z" /><text class="var" x="368" y="100" text-anchor="middle">w</text><text class="sm" x="368" y="87" text-anchor="middle">线宽</text><path class="dim" d="M408 128 H434 M408 160 H434" /><path class="dim" d="M434 128 V160" />
+  <path class="dimh" d="M431 134 L434 128 L437 134 Z M431 154 L434 160 L437 154 Z" /><text class="var" x="426" y="148" text-anchor="end"></text><text class="var" x="442" y="154">t</text><text class="sm" x="455" y="154">铜箔厚度</text><path class="dim" d="M128 160 H102 M128 246 H102" /><path class="dim" d="M102 160 V246" />
+  <path class="dimh" d="M99 166 L102 160 L105 166 Z M99 240 L102 246 L105 240 Z" /><text class="var" x="94" y="207" text-anchor="end"></text><text class="var" x="94" y="201" text-anchor="end">h</text><text class="sm" x="94" y="215" text-anchor="end">介质厚度</text><path class="dim" d="M324 144 H328" /><text class="sm" x="320" y="148" text-anchor="end">走线</text>
+</svg>

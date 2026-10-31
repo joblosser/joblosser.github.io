@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" width="680" height="340" role="img" aria-label="单位长度电感：按 Δz 把传输线切成一段一段，每段的环路电感记作 L_Δz；下表给出表层微带线与内层带状线的量级">
+  <!--
+    照着课件「单位长度电感」那张图画，分三栏：
+      上：沿传输方向看，信号路径与参考路径之间是磁场；按 Δz 切开，
+           每一段的环路电感用一个集总电感 L_Δz 代替（和 fig-cap-model 对偶）。
+      下：两组截面参数和算出来的单位长度电数量级。
+    ⚠️ 这里**不画 ⊙/⊗ 的磁场方向符号** —— 课件那一栏的电流箭头和 H 箭头
+       从 3D 视角没法唯一确定朝向，画反了比不画更糟，只标注「磁场」区域。
+    ⚠️ 下标用 <tspan dy="4">，上标用 dy="-8"，别写反。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .coil  { fill: none; stroke: #00629b; stroke-width: 1.6; }
+    .fluxbg{ fill: #eef3f6; }
+    .dz    { fill: none; stroke: #98a8b5; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim   { fill: none; stroke: #8a97a3; stroke-width: 1.2; }
+    .dim-h { fill: #8a97a3; }
+    .cur   { fill: none; stroke: #ba0c2f; stroke-width: 1.8; stroke-linecap: round; }
+    .cur-h { fill: #ba0c2f; }
+    .plane { fill: #00629b; }
+    .trace { fill: #00629b; }
+    .diel  { fill: #f2ede2; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 14px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+    .f     { fill: #46586a; font-size: 14px;
+             font-family: Georgia, "Times New Roman", serif; }
+    .red   { fill: #ba0c2f; }
+
+    @media (prefers-color-scheme: dark) {
+      .cond  { stroke: #00b5e2; }
+      .coil  { stroke: #00b5e2; }
+      .fluxbg{ fill: #1d262c; }
+      .dz    { stroke: #5b6c78; }
+      .dim   { stroke: #8b9aa7; }
+      .dim-h { fill: #8b9aa7; }
+      .cur   { stroke: #ff7a8a; }
+      .cur-h { fill: #ff7a8a; }
+      .plane { fill: #00b5e2; }
+      .trace { fill: #00b5e2; }
+      .diel  { fill: #2b2620; }
+      .lbl   { fill: #a3b5c2; }
+      .var   { fill: #a3b5c2; }
+      .f     { fill: #c9d6e0; }
+      .red   { fill: #ff7a8a; }
+    }
+  </style>
+
+  <!-- ==================== 上：Δz 与集总电感 ==================== -->
+  <!-- 两根导体之间的磁场区域 -->
+  <rect class="fluxbg" x="70" y="63" width="530" height="54" />
+  <text class="lbl" x="78" y="95">磁场</text>
+
+  <!-- 信号路径：被三个线圈打断 -->
+  <path class="cond" d="M70 56 H188 M212 56 H328 M352 56 H468 M492 56 H600" />
+  <!-- 参考路径 -->
+  <path class="cond" d="M70 124 H188 M212 124 H328 M352 124 H468 M492 124 H600" />
+  <!-- 三个集总电感（向上/向下鼓包，避开中间的磁场区） -->
+  <path class="coil" d="M188 56 Q192 36 196 56 Q200 36 204 56 Q208 36 212 56
+                         M328 56 Q332 36 336 56 Q340 36 344 56 Q348 36 352 56
+                         M468 56 Q472 36 476 56 Q480 36 484 56 Q488 36 492 56" />
+  <path class="coil" d="M188 124 Q192 144 196 124 Q200 144 204 124 Q208 144 212 124
+                         M328 124 Q332 144 336 124 Q340 144 344 124 Q348 144 352 124
+                         M468 124 Q472 144 476 124 Q480 144 484 124 Q488 144 492 124" />
+
+  <!-- 电流方向 -->
+  <path class="cur" d="M80 44 H110" />
+  <path class="cur-h" d="M104 39 L116 44 L104 49 Z" />
+  <path class="cur" d="M540 140 H510" />
+  <path class="cur-h" d="M516 135 L504 140 L516 145 Z" />
+
+  <text class="lbl" x="608" y="60">信号路径</text>
+  <text class="lbl" x="608" y="128">参考路径</text>
+
+  <!-- Δz 的边界取相邻两个电感的中点，这样一段里正好是一个电感 -->
+  <path class="dz" d="M270 40 V140" />
+  <path class="dz" d="M410 40 V140" />
+  <text class="var" x="340" y="156" text-anchor="middle">Δz</text>
+  <path class="dim" d="M270 166 H410" />
+  <path class="dim-h" d="M276 162 L268 166 L276 170 Z M404 162 L412 166 L404 170 Z" />
+  <text class="var" x="340" y="188" text-anchor="middle">L</text>
+  <text class="var" x="349" y="192" font-size="10">Δz</text>
+
+  <!-- ==================== 下：两组截面 ==================== -->
+  <!-- 左：表层微带线 -->
+  <rect class="trace" x="150" y="222" width="60" height="10" />
+  <rect class="diel"  x="110" y="232" width="140" height="44" />
+  <rect class="plane" x="110" y="276" width="140" height="8" />
+  <text class="lbl" x="180" y="214" text-anchor="middle">6mil</text>
+  <path class="dim" d="M262 232 V276" />
+  <path class="dim-h" d="M258 238 L262 230 L266 238 Z M258 270 L262 278 L266 270 Z" />
+  <text class="lbl" x="268" y="258">3.6mil</text>
+  <text class="lbl" x="180" y="262" text-anchor="middle">ε<tspan dy="4" font-size="9">r</tspan><tspan dy="-4"> = 4.5</tspan></text>
+
+  <!-- 右：内层带状线 -->
+  <rect class="plane" x="400" y="214" width="140" height="8" />
+  <rect class="diel"  x="400" y="222" width="140" height="30" />
+  <rect class="trace" x="440" y="252" width="60" height="10" />
+  <rect class="diel"  x="400" y="262" width="140" height="30" />
+  <rect class="plane" x="400" y="292" width="140" height="8" />
+  <text class="lbl" x="470" y="245" text-anchor="middle">6mil</text>
+  <path class="dim" d="M552 222 V252" />
+  <path class="dim-h" d="M548 228 L552 220 L556 228 Z M548 246 L552 254 L556 246 Z" />
+  <text class="lbl" x="558" y="240">H1 = 8mil</text>
+  <path class="dim" d="M552 262 V292" />
+  <path class="dim-h" d="M548 268 L552 260 L556 268 Z M548 286 L552 294 L556 286 Z" />
+  <text class="lbl" x="558" y="280">H2 = 9mil</text>
+  <text class="lbl" x="470" y="282" text-anchor="middle">ε<tspan dy="4" font-size="9">r</tspan><tspan dy="-4"> = 4.0</tspan></text>
+
+  <!-- 结果 -->
+  <text class="f" x="180" y="324" text-anchor="middle">L<tspan dy="4" font-size="10">pul</tspan><tspan dy="-4"> ≈ 7.5 nH/inch</tspan></text>
+  <text class="f" x="470" y="324" text-anchor="middle">L<tspan dy="4" font-size="10">pul</tspan><tspan dy="-4"> ≈ 9 nH/inch</tspan></text>
+</svg>

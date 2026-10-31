@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" role="img" aria-label="梯形波与理想方波频谱包络渐近线的对比示意：虚线是理想方波（0、−20 dB/十倍频程两段），实线是梯形波（0、−20、−40 dB/十倍频程三段），两个拐点分别在 1/(πτ) 和 1/(πtr)，红线是 3 dB 带宽的电平，梯形波先与它相交">
+  <!--
+    坐标由 gen-e02.cjs 算出，不手写。下标 <tspan dy="4">，上标 <tspan dy="-8">。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7d3f98; stroke-width:2.2; stroke-linecap:round; }
+  .cS   { fill:none; stroke:#ba0c2f; stroke-width:2.6; stroke-linecap:round; }
+  .band { fill:#ba0c2f; opacity:.07; }
+  .bandlg { fill:#ba0c2f; opacity:.30; }
+  .base { fill:none; stroke:#8a97a3; stroke-width:1.3; opacity:.75; }
+  .stem { fill:none; stroke:#00629b; stroke-width:1; opacity:.85; }
+  /* 包络线要细、淡、点状：视频里它是一条很浅的点线，高频端谱线密到亚像素时才不会把蓝色谱线整片盖掉。
+     注意：这段样式在模板字符串里，只能用 CSS 注释，写成双斜杠会把 .envr 整条规则吃掉（CSS 注释也不能嵌套） */
+  .envr { fill:none; stroke:#ba0c2f; stroke-width:1; stroke-dasharray:2 3; opacity:.75; }
+  .arr  { fill:none; stroke:#2b3a47; stroke-width:1.6; stroke-dasharray:5 3; }
+  .arrh { fill:#2b3a47; }
+  /* 梯形波的渐近线一律画实线、理想方波一律画虚线（课件原话：「上面这个虚线是理想方波的…，
+     下面三条折线的这个是梯形波的」）。同一篇笔记里的两张渐近线图必须共用这套线型，别一张一个样 */
+  .asym { fill:none; stroke:#00629b; stroke-width:2; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  /* 灰色虚线：理想方波的渐近线。视频里虚线画的是理想方波，实线才是梯形波，别搞反 */
+  .refd { fill:none; stroke:#8a97a3; stroke-width:1.7; stroke-dasharray:7 5; }
+  .env  { fill:none; stroke:#8a97a3; stroke-width:1.1; stroke-dasharray:3 3; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dot  { fill:#00629b; }
+  .dotr { fill:#ba0c2f; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* 3 dB 带宽电平线：红细实线（红 = 参考量，不占数据色）。课件那张图上就是一条横贯全宽的红线，
+     而且线上一个数字都没标 —— 这条线的位置是示意，不代表真实的 dB 值 */
+  .db3  { fill:none; stroke:#ba0c2f; stroke-width:1.6; }
+  .dot3 { fill:#ba0c2f; }
+  /* 红字：只给「有真实 dB 轴」的图用（fig-e02-rcbw 标 −3 dB）。示意图上不许标 dB 数值 */
+  .smr  { fill:#ba0c2f; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* 空心端子（电路图的引脚小圈）：fill:none，任何背景色都透得过去 */
+  .ring { fill:none; stroke:#00629b; stroke-width:1.4; }
+  .cr   { fill:#ba0c2f; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .cP { stroke:#c792ea; } .cS { stroke:#ff7a8a; }
+    .band { fill:#ff7a8a; opacity:.08; }
+    .bandlg { fill:#ff7a8a; opacity:.38; }
+    .base { stroke:#8b9aa7; }
+    .stem { stroke:#00b5e2; }
+    .envr { stroke:#ff7a8a; }
+    .arr { stroke:#e8eef3; } .arrh { fill:#e8eef3; }
+    .asym { stroke:#00b5e2; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .refd { stroke:#c9d5de; }
+    .env { stroke:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .dot { fill:#00b5e2; } .dotr { fill:#ff7a8a; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+    .db3 { stroke:#ff7a8a; } .dot3 { fill:#ff7a8a; } .smr { fill:#ff7a8a; }
+    .ring { stroke:#00b5e2; } .cr { fill:#ff7a8a; }
+  }
+</style>
+<path class="ax" d="M74 40 V286 H616" /><path class="dimh" d="M616 286 L608 282 L608 290 Z" /><path class="dimh" d="M74 40 L70 48 L78 48 Z" /><text class="var" x="624" y="291">f</text><text class="var" x="64" y="46" text-anchor="end">dB</text><path class="db3" d="M74 162 H616" /><path class="cL" d="M74.0 104.0 L247.4 104.0 L355.8 136.5 L605.0 286.0" /><path class="refd" d="M74.0 92.0 L247.4 92.0 L616.0 202.6" /><circle class="dot3" cx="398.3" cy="162" r="3.2" /><circle class="dot3" cx="480.8" cy="162" r="3.2" /><path class="dim" d="M247.4 104.0 V286" stroke-dasharray="3 3" /><text class="var" x="247.4" y="312" text-anchor="middle">1/(πτ)</text><path class="dim" d="M355.8 136.5 V286" stroke-dasharray="3 3" /><text class="var" x="355.8" y="312" text-anchor="middle">1/(πt<tspan baseline-shift="sub" font-size="9">r</tspan>)</text><text class="sm" x="160.7" y="78.0" text-anchor="middle">0 dB/十倍频程</text><text class="sm" x="470" y="128" text-anchor="middle">−20 dB/十倍频程</text><text class="sm" x="560" y="222" text-anchor="middle">−40 dB/十倍频程</text><path class="cL" d="M225 338 h26" /><text class="sm" x="257" y="342">梯形波渐近线</text><path class="refd" d="M340 338 h26" /><text class="sm" x="372" y="342">理想方波渐近线</text>
+</svg>

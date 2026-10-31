@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 210" width="680" height="210" role="img" aria-label="表层微带线上面没有导体，只有走线正下方一个参考平面；内层走线夹在两个平面中间，上下两个都是参考平面">
+  <!--
+    坐标由 gen-e08.cjs 算出，不手写。
+    ⚠️ 下标 <tspan dy="4">、上标 <tspan dy="-8">，正负号别写反。
+    颜色写死（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .fld  { fill:none; stroke:#00629b; stroke-width:1; opacity:.6; }
+  .fldh { fill:#00629b; opacity:.7; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7b3fa0; stroke-width:2.2; stroke-linecap:round; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .dimtx{ fill:#8a97a3; font-size:10px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* ⚠️ .hl 只对 path 元素有效（尖括号不能出现在 style 里，会破坏 XML）：.lbl/.sm 定义在 .hl 之后，同票时后者赢，文字上的 .hl 不起作用。
+     要给文字上高亮色，必须用这个专门的类。 */
+  .lblhl { fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; } .fld { stroke:#00b5e2; }
+    .fldh { fill:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .cP { stroke:#c9a0ff; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+  }
+</style>
+<rect class="di" x="75" y="90" width="210" height="68" /><rect class="pl" x="75" y="158" width="210" height="12" /><rect class="cu" x="152" y="76" width="56" height="14" /><text class="lbl" style="font-size:13px" x="180" y="62" text-anchor="middle">表层微带线</text><text class="lblhl" style="font-size:13px" x="180" y="196" text-anchor="middle">1 个参考平面</text><rect class="di" x="395" y="90" width="210" height="68" /><rect class="pl" x="395" y="78" width="210" height="12" /><rect class="pl" x="395" y="158" width="210" height="12" /><rect class="cu" x="472" y="117" width="56" height="14" /><text class="lbl" style="font-size:13px" x="500" y="62" text-anchor="middle">内层走线</text><text class="lblhl" style="font-size:13px" x="500" y="196" text-anchor="middle">2 个参考平面</text>
+</svg>

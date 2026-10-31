@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" width="680" height="440" role="img" aria-label="理想传输线的集总参数模型：上面是信号路径与参考路径两条导体、标出 Δz 段及两导体之间的场；下面是等效 LC 阶梯，多节串联电感与并联电容，其中 Δz 段对应一个电感 L（下标 Δz）和一个电容 C（下标 Δz）">
+  <!-- 坐标由 gen-e09.cjs 算出，不手写。下标 <tspan baseline-shift="sub">。 -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7d3f98; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  .arrow{ fill:#2b3a47; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .ring { fill:none; stroke:#00629b; stroke-width:1.4; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .src  { fill:#00629b; }
+  .cLh  { fill:#00629b; }
+  .cZh  { fill:#2f7d32; }
+  .cPh  { fill:#7d3f98; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cP { stroke:#c792ea; } .cZ { stroke:#7ed957; }
+    .ax { stroke:#8b9aa7; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .arrow { fill:#e8eef3; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+    .ring { stroke:#00b5e2; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .src { fill:#00b5e2; }
+    .cLh { fill:#00b5e2; }
+    .cZh { fill:#7ed957; }
+    .cPh { fill:#c792ea; }
+  }
+</style>
+<rect class="cu" x="110" y="75.5" width="496" height="9" /><rect class="cu" x="110" y="135.5" width="496" height="9" /><path class="src" d="M110 80 L84 67 L84 93 Z" /><path class="cL" stroke-dasharray="6 5" d="M170 63 H240" /><path class="cLh" d="M240 63 L232 59 L232 67 Z" /><path class="cZ" stroke-dasharray="6 5" d="M240 157 H170" /><path class="cZh" d="M170 157 L178 153 L178 161 Z" /><text class="sm" x="612" y="84">信号路径</text><text class="sm" x="612" y="144">参考路径</text><path class="cP" stroke-dasharray="5 4" d="M382 60 V160" /><path class="cP" stroke-dasharray="5 4" d="M472 60 V160" /><text class="var" x="427" y="176" text-anchor="middle">Δz</text><circle class="cP" cx="398" cy="97" r="4" /><path class="cP" d="M395.2 94.2 L400.8 99.8 M395.2 99.8 L400.8 94.2" /><path class="cP" stroke-dasharray="3 3" d="M398 105 V131" /><path class="cPh" d="M394.8 131 L398 138 L401.2 131 Z" /><circle class="cP" cx="420" cy="97" r="4" /><path class="cP" d="M417.2 94.2 L422.8 99.8 M417.2 99.8 L422.8 94.2" /><path class="cP" stroke-dasharray="3 3" d="M420 105 V131" /><path class="cPh" d="M416.8 131 L420 138 L423.2 131 Z" /><circle class="cP" cx="442" cy="97" r="4" /><path class="cP" d="M439.2 94.2 L444.8 99.8 M439.2 99.8 L444.8 94.2" /><path class="cP" stroke-dasharray="3 3" d="M442 105 V131" /><path class="cPh" d="M438.8 131 L442 138 L445.2 131 Z" /><circle class="cP" cx="464" cy="97" r="4" /><path class="cP" d="M461.2 94.2 L466.8 99.8 M461.2 99.8 L466.8 94.2" /><path class="cP" stroke-dasharray="3 3" d="M464 105 V131" /><path class="cPh" d="M460.8 131 L464 138 L467.2 131 Z" /><path class="ln2" d="M90 280 H130" /><path class="cL" d="M130 280 Q138.8 264.0 147.5 280 Q156.3 264.0 165.0 280 Q173.8 264.0 182.5 280 Q191.3 264.0 200.0 280" /><path class="cL" d="M310 280 Q318.8 264.0 327.5 280 Q336.3 264.0 345.0 280 Q353.8 264.0 362.5 280 Q371.3 264.0 380.0 280" /><path class="cL" d="M485 280 Q493.8 264.0 502.5 280 Q511.3 264.0 520.0 280 Q528.8 264.0 537.5 280 Q546.3 264.0 555.0 280" /><path class="ln2" d="M200 280 H310" /><path class="ln2" d="M380 280 H485" /><path class="ln2" d="M555 280 H610" /><path class="ln2" d="M90 380 H610" /><path class="cC" d="M245 280 V320" /><path class="cC" d="M227.0 320 H263.0" /><path class="cC" d="M227.0 340 H263.0" /><path class="cC" d="M245 340 V380" /><path class="cC" d="M425 280 V320" /><path class="cC" d="M407.0 320 H443.0" /><path class="cC" d="M407.0 340 H443.0" /><path class="cC" d="M425 340 V380" /><path class="cC" d="M580 280 V320" /><path class="cC" d="M562.0 320 H598.0" /><path class="cC" d="M562.0 340 H598.0" /><path class="cC" d="M580 340 V380" /><path class="src" d="M90 280 L64 267 L64 293 Z" /><path class="cL" stroke-dasharray="6 5" d="M148 252 H218" /><path class="cLh" d="M218 252 L210 248 L210 256 Z" /><path class="cZ" stroke-dasharray="6 5" d="M220 397 H150" /><path class="cZh" d="M150 397 L158 393 L158 401 Z" /><path class="cP" stroke-dasharray="5 4" d="M300 256 V404" /><path class="cP" stroke-dasharray="5 4" d="M480 256 V404" /><text class="var" x="390" y="422" text-anchor="middle">Δz</text><text class="var" x="345" y="252" text-anchor="middle">L<tspan baseline-shift="sub" font-size="9">Δz</tspan></text><text class="var" x="449" y="328" text-anchor="start">C<tspan baseline-shift="sub" font-size="9">Δz</tspan></text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 278" width="820" height="278" role="img" aria-label="六层板层叠：11 个物理层金属/介质交错，金属与信号层同色、介质同色；右侧 13 个标记（TOP、BOTTOM 夹金属各多一个 oz）">
+  <!--
+    坐标由 gen-e08.cjs 算出，不手写。
+    ⚠️ 下标 <tspan dy="4">、上标 <tspan dy="-8">，正负号别写反。
+    颜色写死（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .fld  { fill:none; stroke:#00629b; stroke-width:1; opacity:.6; }
+  .fldh { fill:#00629b; opacity:.7; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7b3fa0; stroke-width:2.2; stroke-linecap:round; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .dimtx{ fill:#8a97a3; font-size:10px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* ⚠️ .hl 只对 path 元素有效（尖括号不能出现在 style 里，会破坏 XML）：.lbl/.sm 定义在 .hl 之后，同票时后者赢，文字上的 .hl 不起作用。
+     要给文字上高亮色，必须用这个专门的类。 */
+  .lblhl { fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; } .fld { stroke:#00b5e2; }
+    .fldh { fill:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .cP { stroke:#c9a0ff; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+  }
+</style>
+<rect class="di" x="118" y="36" width="334" height="12" /><rect class="di" x="118" y="60" width="334" height="16" /><rect class="di" x="118" y="84" width="334" height="72" /><rect class="di" x="118" y="164" width="334" height="16" /><rect class="di" x="118" y="202" width="334" height="12" /><rect class="cu" x="118" y="24" width="334" height="12" /><rect class="cu" x="118" y="48" width="334" height="12" /><rect class="cu" x="118" y="76" width="334" height="8" /><rect class="cu" x="118" y="156" width="334" height="8" /><rect class="cu" x="118" y="180" width="334" height="22" /><rect class="cu" x="118" y="214" width="334" height="12" /><text class="sm" x="70" y="34" text-anchor="end">TOP</text><path class="cC" d="M78.0 30.0 L101.0 30.0" />
+  <path class="hl" d="M110.0 30.0 L101.0 34.5 L101.0 25.5 Z" /><text class="dimtx" x="496" y="34">0.5 mils / 0.5 oz</text><path class="cC" d="M484.0 30.0 L471.0 30.0" />
+  <path class="hl" d="M462.0 30.0 L471.0 25.5 L471.0 34.5 Z" /><text class="dimtx" x="496" y="46">4.8 mils</text><path class="cC" d="M484.0 42.0 L471.0 42.0" />
+  <path class="hl" d="M462.0 42.0 L471.0 37.5 L471.0 46.5 Z" /><text class="sm" x="70" y="58" text-anchor="end">VCC</text><path class="cC" d="M78.0 54.0 L101.0 54.0" />
+  <path class="hl" d="M110.0 54.0 L101.0 58.5 L101.0 49.5 Z" /><text class="dimtx" x="496" y="58">0.5 oz</text><path class="cC" d="M484.0 54.0 L471.0 54.0" />
+  <path class="hl" d="M462.0 54.0 L471.0 49.5 L471.0 58.5 Z" /><text class="dimtx" x="496" y="72">6.3 mil</text><path class="cC" d="M484.0 68.0 L471.0 68.0" />
+  <path class="hl" d="M462.0 68.0 L471.0 63.5 L471.0 72.5 Z" /><text class="sm" x="70" y="84" text-anchor="end">InnerSignal1</text><path class="cC" d="M78.0 80.0 L101.0 80.0" />
+  <path class="hl" d="M110.0 80.0 L101.0 84.5 L101.0 75.5 Z" /><text class="dimtx" x="496" y="84">0.5 oz</text><path class="cC" d="M484.0 80.0 L471.0 80.0" />
+  <path class="hl" d="M462.0 80.0 L471.0 75.5 L471.0 84.5 Z" /><text class="sm" x="70" y="124" text-anchor="end">芯板</text><path class="cC" d="M78.0 120.0 L101.0 120.0" />
+  <path class="hl" d="M110.0 120.0 L101.0 124.5 L101.0 115.5 Z" /><text class="dimtx" x="496" y="124">40 mils</text><path class="cC" d="M484.0 120.0 L471.0 120.0" />
+  <path class="hl" d="M462.0 120.0 L471.0 115.5 L471.0 124.5 Z" /><text class="sm" x="70" y="164" text-anchor="end">InnerSignal2</text><path class="cC" d="M78.0 160.0 L101.0 160.0" />
+  <path class="hl" d="M110.0 160.0 L101.0 164.5 L101.0 155.5 Z" /><text class="dimtx" x="496" y="164">0.5 oz</text><path class="cC" d="M484.0 160.0 L471.0 160.0" />
+  <path class="hl" d="M462.0 160.0 L471.0 155.5 L471.0 164.5 Z" /><text class="dimtx" x="496" y="176">6.3 mil</text><path class="cC" d="M484.0 172.0 L471.0 172.0" />
+  <path class="hl" d="M462.0 172.0 L471.0 167.5 L471.0 176.5 Z" /><text class="sm" x="70" y="195" text-anchor="end">GND</text><path class="cC" d="M78.0 191.0 L101.0 191.0" />
+  <path class="hl" d="M110.0 191.0 L101.0 195.5 L101.0 186.5 Z" /><text class="dimtx" x="496" y="195">0.5 oz</text><path class="cC" d="M484.0 191.0 L471.0 191.0" />
+  <path class="hl" d="M462.0 191.0 L471.0 186.5 L471.0 195.5 Z" /><text class="dimtx" x="496" y="212">4.8 mils</text><path class="cC" d="M484.0 208.0 L471.0 208.0" />
+  <path class="hl" d="M462.0 208.0 L471.0 203.5 L471.0 212.5 Z" /><text class="sm" x="70" y="224" text-anchor="end">BOTTOM</text><path class="cC" d="M78.0 220.0 L101.0 220.0" />
+  <path class="hl" d="M110.0 220.0 L101.0 224.5 L101.0 215.5 Z" /><text class="dimtx" x="496" y="224">0.5 mils / 0.5 oz</text><path class="cC" d="M484.0 220.0 L471.0 220.0" />
+  <path class="hl" d="M462.0 220.0 L471.0 215.5 L471.0 224.5 Z" /><text class="sm hl" x="444" y="195" text-anchor="end">参考平面</text><text class="sm" x="118" y="258">上平面存在：Z<tspan dy="4" font-size="9">0</tspan><tspan dy="-4"></tspan> = 49.48 Ω　　撤掉上平面：Z<tspan dy="4" font-size="9">0</tspan><tspan dy="-4"></tspan> = 50.23 Ω</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 680 200" width="680" height="200" role="img" aria-label="非均匀传输线：走线宽度一段宽一段窄，每一段均匀的区间各有自己的特性阻抗，整根线没有特性阻抗">
+  <!--
+    照着课件「非均匀传输线」那张图画（俯视）：
+      走线一会儿变宽、一会儿变窄。
+      每一段宽度不变的地方是均匀的，各有一段自己的特性阻抗；
+      把它们连成一根，整个结构就不存在特性阻抗。
+    ⚠️ 每一段的 Z0 标在走线上方、用一根引线指到该段，别在走线底下画范围线 ——
+       走线下沿和范围线都是长横线，一近就闭合成方框，读成「把走线框起来」。
+    ⚠️ 下标用 <tspan dy="4">，上标用 dy="-8"，别写反。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .trace { fill: #00629b; }
+    .lead  { fill: none; stroke: #8a97a3; stroke-width: 1.2; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+
+    @media (prefers-color-scheme: dark) {
+      .trace { fill: #00b5e2; }
+      .lead  { stroke: #8b9aa7; }
+      .lbl   { fill: #a3b5c2; }
+      .var   { fill: #a3b5c2; }
+    }
+  </style>
+
+  <!-- 走线：宽 → 窄 → 宽 → 窄 -->
+  <path class="trace" d="M90 86 L190 86 L225 98 L365 98 L400 82 L520 82 L555 94 L620 94
+                          L620 126 L555 126 L520 138 L400 138 L365 122 L225 122 L190 134 L90 134 Z" />
+  <text class="lbl" x="80" y="114" text-anchor="end">走线</text>
+
+  <!-- 每一段均匀区间的特性阻抗：标签在走线上方，一根引线指到该段 -->
+  <path class="lead" d="M140 70 V78" />
+  <path class="lead" d="M295 70 V90" />
+  <path class="lead" d="M460 70 V74" />
+  <path class="lead" d="M587 70 V86" />
+  <text class="var" x="140" y="64" text-anchor="middle">Z<tspan dy="4" font-size="9">01</tspan></text>
+  <text class="var" x="295" y="64" text-anchor="middle">Z<tspan dy="4" font-size="9">02</tspan></text>
+  <text class="var" x="460" y="64" text-anchor="middle">Z<tspan dy="4" font-size="9">03</tspan></text>
+  <text class="var" x="587" y="64" text-anchor="middle">Z<tspan dy="4" font-size="9">04</tspan></text>
+
+  <!-- 整体 -->
+  <path class="lead" d="M90 164 V176 H620 V164" />
+  <text class="lbl" x="355" y="204" text-anchor="middle">整根线：不存在特性阻抗</text>
+</svg>

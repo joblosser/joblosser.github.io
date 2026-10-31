@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 240" width="680" height="240" role="img" aria-label="内层走线：上下两个平面离走线一样远时，返回电流对半分，两个平面都是参考平面">
+  <!--
+    坐标由 gen-e08.cjs 算出，不手写。
+    ⚠️ 下标 <tspan dy="4">、上标 <tspan dy="-8">，正负号别写反。
+    颜色写死（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .fld  { fill:none; stroke:#00629b; stroke-width:1; opacity:.6; }
+  .fldh { fill:#00629b; opacity:.7; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7b3fa0; stroke-width:2.2; stroke-linecap:round; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .dimtx{ fill:#8a97a3; font-size:10px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  /* ⚠️ .hl 只对 path 元素有效（尖括号不能出现在 style 里，会破坏 XML）：.lbl/.sm 定义在 .hl 之后，同票时后者赢，文字上的 .hl 不起作用。
+     要给文字上高亮色，必须用这个专门的类。 */
+  .lblhl { fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; } .fld { stroke:#00b5e2; }
+    .fldh { fill:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .cP { stroke:#c9a0ff; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+  }
+</style>
+<rect class="pl" x="90" y="48" width="480" height="22" /><rect class="di" x="90" y="70" width="480" height="134" /><rect class="pl" x="90" y="204" width="480" height="22" /><text class="sm" x="102" y="63">GND</text><text class="sm" x="102" y="219">VCC</text><rect class="cu" x="287" y="129" width="86" height="16" /><path class="fld" d="M301.3 129 V75" /><path class="fldh" d="M298.1 75.5 L301.3 70 L304.5 75.5 Z" /><path class="fld" d="M301.3 145 V199" /><path class="fldh" d="M298.1 198.5 L301.3 204 L304.5 198.5 Z" /><path class="fld" d="M315.7 129 V75" /><path class="fldh" d="M312.5 75.5 L315.7 70 L318.9 75.5 Z" /><path class="fld" d="M315.7 145 V199" /><path class="fldh" d="M312.5 198.5 L315.7 204 L318.9 198.5 Z" /><path class="fld" d="M330.0 129 V75" /><path class="fldh" d="M326.8 75.5 L330.0 70 L333.2 75.5 Z" /><path class="fld" d="M330.0 145 V199" /><path class="fldh" d="M326.8 198.5 L330.0 204 L333.2 198.5 Z" /><path class="fld" d="M344.3 129 V75" /><path class="fldh" d="M341.1 75.5 L344.3 70 L347.5 75.5 Z" /><path class="fld" d="M344.3 145 V199" /><path class="fldh" d="M341.1 198.5 L344.3 204 L347.5 198.5 Z" /><path class="fld" d="M358.7 129 V75" /><path class="fldh" d="M355.5 75.5 L358.7 70 L361.9 75.5 Z" /><path class="fld" d="M358.7 145 V199" /><path class="fldh" d="M355.5 198.5 L358.7 204 L361.9 198.5 Z" /><path class="dim" d="M90 70 H66 M90 129 H66" /><path class="dim" d="M66 70 V129" />
+  <path class="dimh" d="M63 76 L66 70 L69 76 Z M63 123 L66 129 L69 123 Z" /><text class="var" x="58" y="103.5" text-anchor="end">h</text><path class="dim" d="M570 145 H594 M570 204 H594" /><path class="dim" d="M594 145 V204" />
+  <path class="dimh" d="M591 151 L594 145 L597 151 Z M591 198 L594 204 L597 198 Z" /><text class="var" x="602" y="178.5" text-anchor="start">h</text><text class="sm hl" x="330" y="63" text-anchor="middle">各 50%</text><text class="sm hl" x="330" y="219" text-anchor="middle">各 50%</text>
+</svg>

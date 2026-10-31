@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 390" width="680" height="390" role="img" aria-label="表层微带线与内层带状线的截面，以及各自的单位长度电容">
+  <!--
+    两个截面，同一套材料参数（εr = 4.4、线宽 6 mil、阻抗约 50 Ω）：
+      上：表层微带线，介质 3.6 mil → 约 3 pF/inch
+      下：内层带状线，上下各 8 mil  → 约 3.5 pF/inch
+    图形不严格按 mil 等比，只为示意；数字以标注为准。
+  -->
+  <style>
+    .diel  { fill: #eef3f7; }
+    .plane { fill: #9aa8b4; }
+    .trace { fill: #00629b; }
+    .dim   { fill: none; stroke: #8a97a3; stroke-width: 1; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .val   { fill: #00629b; font-size: 15px; font-weight: 600;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+
+    @media (prefers-color-scheme: dark) {
+      .diel  { fill: #161a1e; }
+      .plane { fill: #6b7a86; }
+      .trace { fill: #00b5e2; }
+      .dim   { stroke: #8b9aa7; }
+      .lbl   { fill: #a3b5c2; }
+      .val   { fill: #00b5e2; }
+    }
+  </style>
+
+  <!-- ================= 表层微带线 ================= -->
+  <text class="lbl" x="40" y="36">表层（微带线）</text>
+
+  <rect class="diel"  x="70" y="94" width="330" height="56" />
+  <rect class="trace" x="150" y="72" width="60" height="22" rx="2" />
+  <rect class="plane" x="70" y="150" width="330" height="14" />
+
+  <!-- 线宽 6 mil -->
+  <path class="dim" d="M150 60 H210" />
+  <path class="dim" d="M150 56 V64 M210 56 V64" />
+  <text class="lbl" x="180" y="50" text-anchor="middle">6 mil</text>
+
+  <!-- 介质厚 3.6 mil -->
+  <path class="dim" d="M414 94 V150" />
+  <path class="dim" d="M410 94 H418 M410 150 H418" />
+  <text class="lbl" x="424" y="126">3.6 mil</text>
+
+  <!-- εr -->
+  <text class="lbl" x="82" y="128"><tspan class="var">ε</tspan><tspan dy="3" font-size="9">r</tspan><tspan dy="-3"> = 4.4</tspan></text>
+
+  <!-- 数值 -->
+  <text class="val" x="490" y="128">≈ 3 pF/inch</text>
+
+  <!-- 分隔线 -->
+  <path class="dim" d="M40 192 H640" stroke-dasharray="4 6" opacity="0.5" />
+
+  <!-- ================= 内层带状线 ================= -->
+  <text class="lbl" x="40" y="228">内层（带状线）</text>
+
+  <rect class="plane" x="70" y="248" width="330" height="14" />
+  <rect class="diel"  x="70" y="262" width="330" height="94" />
+  <rect class="trace" x="150" y="298" width="60" height="22" rx="2" />
+  <rect class="plane" x="70" y="356" width="330" height="14" />
+
+  <!-- 线宽 6 mil -->
+  <path class="dim" d="M150 288 H210" />
+  <path class="dim" d="M150 284 V292 M210 284 V292" />
+  <text class="lbl" x="180" y="278" text-anchor="middle">6 mil</text>
+
+  <!-- H2 = 8 mil（上介质） -->
+  <path class="dim" d="M414 262 V298" />
+  <path class="dim" d="M410 262 H418 M410 298 H418" />
+  <text class="lbl" x="424" y="284"><tspan class="var">H</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 8 mil</tspan></text>
+
+  <!-- H1 = 8 mil（下介质） -->
+  <path class="dim" d="M414 320 V356" />
+  <path class="dim" d="M410 320 H418 M410 356 H418" />
+  <text class="lbl" x="424" y="342"><tspan class="var">H</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 8 mil</tspan></text>
+
+  <!-- εr -->
+  <text class="lbl" x="82" y="336"><tspan class="var">ε</tspan><tspan dy="3" font-size="9">r</tspan><tspan dy="-3"> = 4.4</tspan></text>
+
+  <!-- 数值 -->
+  <text class="val" x="490" y="316">≈ 3.5 pF/inch</text>
+</svg>

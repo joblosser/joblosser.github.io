@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" width="720" height="372" role="img" aria-label="耦合线的四种阻抗：奇模、静态、单根线、偶模随间距的比较，以及微带截面（线宽 6mil、间距 6mil、介质厚 3.6mil、εr 4.4）">
+  <!-- 基准=视频原片幻灯片（ffmpeg -ss 900 抽帧 + PIL 逐像素量网格线与蓝点）。 -->
+  <style>
+  .ax   { stroke:#8f98a3; stroke-width:1.1; fill:none; }
+  .gl   { stroke:#c3c9d0; stroke-width:0.8; fill:none; }
+  .ln   { fill:none; stroke:#2b2bb4; stroke-width:2; stroke-dasharray:5 4; stroke-linecap:round; }
+  .dot  { fill:#2b2bb4; }
+  .tx   { fill:#2f3b45; font-family:Georgia,"Times New Roman",serif; font-size:11.5px; }
+  .cat  { fill:#2f3b45; font-family:Georgia,"Times New Roman",serif; font-size:12.5px; }
+  .it   { font-style:italic; }
+  .sub  { font-size:9.5px; }
+  .sd   { font-family:Arial,Helvetica,sans-serif; font-style:normal; }
+  .dimL { fill:#3d4a26; font-family:Georgia,"Times New Roman",serif; font-size:10.5px; }
+  .dim  { fill:#5b6a78; font-family:Georgia,"Times New Roman",serif; font-size:10.5px; }
+  .dims { stroke:#5b6a78; stroke-width:0.9; fill:none; }
+  .slab { fill:#e4eecd; stroke:#b3c489; stroke-width:1; }
+  .cond { fill:#d8611f; stroke:#8f3d1c; stroke-width:1; stroke-linejoin:round; }
+  .gnd  { fill:#e0872f; stroke:#8f3d1c; stroke-width:1; }
+  @media (prefers-color-scheme: dark) {
+    .ax  { stroke:#5d6975; }
+    .gl  { stroke:#4a5563; }
+    .ln  { stroke:#8f8ff0; }
+    .dot { fill:#8f8ff0; }
+    .tx, .cat { fill:#c9d3dc; }
+    .dim { fill:#9aa8b6; } .dims { stroke:#9aa8b6; }
+    .slab { fill:#e4eecd; stroke:#b3c489; }
+    .cond { fill:#d8611f; stroke:#8f3d1c; }
+    .gnd  { fill:#e0872f; stroke:#8f3d1c; }
+  }
+  </style>
+<defs><mask id="mInset" maskUnits="userSpaceOnUse" x="0" y="0" width="720" height="372">
+    <rect x="0" y="0" width="720" height="372" fill="#fff" />
+    <rect x="156" y="34" width="290" height="118" fill="#000" />
+  </mask></defs><g mask="url(#mInset)"><line class="gl" x1="150" y1="302" x2="676" y2="302" /><line class="gl" x1="150" y1="238" x2="676" y2="238" /><line class="gl" x1="150" y1="174" x2="676" y2="174" /><line class="gl" x1="150" y1="110" x2="676" y2="110" /><line class="gl" x1="150" y1="46" x2="676" y2="46" /><line class="gl" x1="216" y1="46" x2="216" y2="302" /><line class="gl" x1="346" y1="46" x2="346" y2="302" /><line class="gl" x1="476" y1="46" x2="476" y2="302" /><line class="gl" x1="606" y1="46" x2="606" y2="302" /></g><path class="ax" d="M150 46 L150 302 L676 302" /><text class="tx" x="140" y="306" text-anchor="end">40</text><text class="tx" x="140" y="242" text-anchor="end">45</text><text class="tx" x="140" y="178" text-anchor="end">50</text><text class="tx" x="140" y="114" text-anchor="end">55</text><text class="tx" x="140" y="50" text-anchor="end">60</text><text class="tx" transform="translate(104 174) rotate(-90)" text-anchor="middle">阻抗（Ω）</text><text class="cat" x="216" y="324" text-anchor="middle">Z<tspan class="sub it" baseline-shift="sub">odd</tspan></text><text class="cat" x="346" y="324" text-anchor="middle">Z<tspan class="sub it" baseline-shift="sub">quiet</tspan></text><text class="cat" x="476" y="324" text-anchor="middle">Z<tspan class="sub sd" baseline-shift="sub">0</tspan></text><text class="cat" x="606" y="324" text-anchor="middle">Z<tspan class="sub it" baseline-shift="sub">even</tspan></text><path class="ln" d="M216 243.1 L346 177.8 L476 166.3 L606 113.8" /><circle class="dot" cx="216" cy="243.1" r="5.2" /><circle class="dot" cx="346" cy="177.8" r="5.2" /><circle class="dot" cx="476" cy="166.3" r="5.2" /><circle class="dot" cx="606" cy="113.8" r="5.2" /><rect class="slab" x="172" y="104" width="200" height="40" /><rect class="gnd" x="172" y="144" width="200" height="6" /><rect class="cond" x="233" y="76" width="26" height="28" /><rect class="cond" x="285" y="76" width="26" height="28" /><line class="dims" x1="233" y1="61" x2="259" y2="61" /><line class="dims" x1="233" y1="57" x2="233" y2="65" /><line class="dims" x1="259" y1="57" x2="259" y2="65" /><text class="dim" x="246" y="55" text-anchor="middle">6mil</text><line class="dims" x1="259" y1="120" x2="285" y2="120" /><line class="dims" x1="259" y1="116" x2="259" y2="124" /><line class="dims" x1="285" y1="116" x2="285" y2="124" /><text class="dimL" x="272" y="135" text-anchor="middle">6mil</text><line class="dims" x1="382" y1="104" x2="382" y2="144" /><line class="dims" x1="378" y1="104" x2="386" y2="104" /><line class="dims" x1="378" y1="144" x2="386" y2="144" /><text class="dim" x="389" y="128" text-anchor="start">3.6mil</text><text class="dimL" x="182" y="131"><tspan class="it">&#949;</tspan><tspan class="it" baseline-shift="sub" font-size="8.5">r</tspan> = 4.4</text>
+</svg>

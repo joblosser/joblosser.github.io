@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 276" width="680" height="276" role="img" aria-label="同一小段末端开路时输入呈容性、短路时呈感性；两者输入阻抗相乘等于特性阻抗的平方">
+  <!-- 坐标由 gen-e09.cjs 算出，不手写。下标 <tspan baseline-shift="sub">。 -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cP   { fill:none; stroke:#7d3f98; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dimh { fill:#8a97a3; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  .arrow{ fill:#2b3a47; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .ring { fill:none; stroke:#00629b; stroke-width:1.4; }
+  .cu   { fill:#c8a45c; stroke:#00629b; stroke-width:1.6; }
+  .di   { fill:#dce9f3; stroke:#00629b; stroke-width:1.2; }
+  .pl   { fill:#9fb8cc; stroke:#00629b; stroke-width:1.6; }
+  .src  { fill:#00629b; }
+  .cLh  { fill:#00629b; }
+  .cZh  { fill:#2f7d32; }
+  .cPh  { fill:#7d3f98; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cP { stroke:#c792ea; } .cZ { stroke:#7ed957; }
+    .ax { stroke:#8b9aa7; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .arrow { fill:#e8eef3; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+    .ring { stroke:#00b5e2; }
+    .cu { fill:#8a6f3a; stroke:#00b5e2; } .di { fill:#132b3a; stroke:#00b5e2; }
+    .pl { fill:#2a4a5e; stroke:#00b5e2; }
+    .src { fill:#00b5e2; }
+    .cLh { fill:#00b5e2; }
+    .cZh { fill:#7ed957; }
+    .cPh { fill:#c792ea; }
+  }
+</style>
+<path class="ln2" d="M62 82 H118" /><path class="cL" d="M118 82 Q128.0 66.0 138.0 82 Q148.0 66.0 158.0 82 Q168.0 66.0 178.0 82 Q188.0 66.0 198.0 82" /><path class="ln2" d="M198 82 H300" /><path class="ln2" d="M62 160 H300" /><path class="cC" d="M240 82 V114" /><path class="cC" d="M223.0 114 H257.0" /><path class="cC" d="M223.0 128 H257.0" /><path class="cC" d="M240 128 V160" /><circle class="src" cx="62" cy="82" r="2.6" /><circle class="src" cx="62" cy="160" r="2.6" /><text class="var" x="158" y="58" text-anchor="middle">L</text><text class="var" x="264" y="126">C</text><text class="sm" x="54" y="125" text-anchor="end">端口</text><circle class="ring" cx="300" cy="82" r="3.4" /><circle class="ring" cx="300" cy="160" r="3.4" /><text class="lbl" x="299" y="68" text-anchor="end">末端开路</text><text class="sm" x="188" y="182" text-anchor="middle">容性输入</text><text class="var" x="188" y="200" text-anchor="middle">Z<tspan baseline-shift="sub" font-size="9">in_open</tspan> ≈ 1 / (jωC)</text><path class="ln2" d="M362 82 H418" /><path class="cL" d="M418 82 Q428.0 66.0 438.0 82 Q448.0 66.0 458.0 82 Q468.0 66.0 478.0 82 Q488.0 66.0 498.0 82" /><path class="ln2" d="M498 82 H600" /><path class="ln2" d="M362 160 H600" /><path class="cC" d="M540 82 V114" /><path class="cC" d="M523.0 114 H557.0" /><path class="cC" d="M523.0 128 H557.0" /><path class="cC" d="M540 128 V160" /><circle class="src" cx="362" cy="82" r="2.6" /><circle class="src" cx="362" cy="160" r="2.6" /><text class="var" x="458" y="58" text-anchor="middle">L</text><text class="var" x="564" y="126">C</text><text class="sm" x="354" y="125" text-anchor="end">端口</text><path class="ln" d="M600 82 V160" /><text class="lbl" x="595" y="68" text-anchor="end">末端短路</text><text class="sm" x="488" y="182" text-anchor="middle">感性输入</text><text class="var" x="488" y="200" text-anchor="middle">Z<tspan baseline-shift="sub" font-size="9">in_short</tspan> = jωL</text><text class="var" x="340" y="238" text-anchor="middle">Z<tspan baseline-shift="sub" font-size="9">in_open</tspan> · Z<tspan baseline-shift="sub" font-size="9">in_short</tspan> = L / C = Z<tspan baseline-shift="sub" font-size="9">0</tspan><tspan baseline-shift="super" font-size="9">2</tspan></text><text class="sm" x="340" y="256" text-anchor="middle">开路、短路输入阻抗相乘，恰为特性阻抗的平方</text>
+</svg>

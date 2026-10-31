@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 262" width="400" height="262" role="img" aria-label="直角三角形：直角边 a_n 与 −b_n，斜边是根号下 a_n 平方加 b_n 平方，夹角 φ_n">
+  <!--
+    坐标由 gen-e01.cjs 算出，不手写。下标 <tspan dy="4">，上标 <tspan dy="-8">。
+  -->
+  <style>
+  .ln   { fill:none; stroke:#00629b; stroke-width:2; stroke-linecap:round; }
+  .ln2  { fill:none; stroke:#00629b; stroke-width:1.3; }
+  .cL   { fill:none; stroke:#00629b; stroke-width:2.2; stroke-linecap:round; }
+  .cC   { fill:none; stroke:#ba0c2f; stroke-width:2.2; stroke-linecap:round; }
+  .cZ   { fill:none; stroke:#2f7d32; stroke-width:2.2; stroke-linecap:round; }
+  .asym { fill:none; stroke:#00629b; stroke-width:2; stroke-dasharray:7 5; }
+  .dim  { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .ref  { fill:none; stroke:#8a97a3; stroke-width:1.4; }
+  .env  { fill:none; stroke:#8a97a3; stroke-width:1.1; stroke-dasharray:3 3; }
+  .dimh { fill:#8a97a3; }
+  .dimr { fill:none; stroke:#ba0c2f; stroke-width:1.4; }
+  .dimhr{ fill:#ba0c2f; }
+  .hl   { fill:#ba0c2f; }
+  .ax   { fill:none; stroke:#8a97a3; stroke-width:1.2; }
+  .dot  { fill:#00629b; }
+  .dotr { fill:#ba0c2f; }
+  .lbl  { fill:#46586a; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .sm   { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .var  { fill:#46586a; font-size:13px; font-style:italic; font-family:Georgia,"Times New Roman",serif; }
+  .tick { fill:#46586a; font-size:10.5px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .lblhl{ fill:#ba0c2f; font-size:12px; font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .ln,.ln2 { stroke:#00b5e2; }
+    .cL { stroke:#00b5e2; } .cC { stroke:#ff7a8a; } .cZ { stroke:#7ed957; }
+    .asym { stroke:#00b5e2; }
+    .dim { stroke:#8b9aa7; } .dimh { fill:#8b9aa7; }
+    .ref { stroke:#c9d5de; }
+    .env { stroke:#8b9aa7; }
+    .dimr { stroke:#ff7a8a; } .dimhr { fill:#ff7a8a; }
+    .hl { fill:#ff7a8a; }
+    .ax { stroke:#8b9aa7; }
+    .dot { fill:#00b5e2; } .dotr { fill:#ff7a8a; }
+    .lbl,.sm,.var,.tick { fill:#a3b5c2; }
+    .lblhl { fill:#ff7a8a; }
+  }
+</style>
+<path class="ln" d="M60 214 H340 L60 34 Z" /><path class="ln2" d="M74 214 V200 H60" /><path class="ln2" d="M290.0 214.0 L290.0 212.8 L290.1 211.6 L290.1 210.4 L290.2 209.2 L290.4 208.1 L290.5 206.9 L290.7 205.7 L290.9 204.5 L291.1 203.4 L291.4 202.2 L291.7 201.1 L292.0 199.9 L292.4 198.8 L292.8 197.6 L293.2 196.5 L293.6 195.4 L294.0 194.3 L294.5 193.2 L295.0 192.1 L295.6 191.1 L296.1 190.0 L296.7 189.0 L297.3 188.0 L297.9 187.0" /><text class="var" x="200" y="248" text-anchor="middle">a<tspan dy="4" font-size="9">n</tspan><tspan dy="-4"></tspan></text><text class="var" x="44" y="129" text-anchor="end">−b<tspan dy="4" font-size="9">n</tspan><tspan dy="-4"></tspan></text><path class="ln2" d="M210.8 105.2 L215.8 111.7 L223.8 89.2 L260.3 89.2" /><text class="var" x="226.8" y="107.2">a<tspan dy="4" font-size="9">n</tspan><tspan dy="-12" dx="-7" font-size="10">2</tspan><tspan dy="8" font-size="13">+</tspan>b<tspan dy="4" font-size="9">n</tspan><tspan dy="-12" dx="-7" font-size="10">2</tspan></text><text class="var" x="263.5" y="195.6">φ<tspan dy="4" font-size="9">n</tspan><tspan dy="-4"></tspan></text>
+</svg>

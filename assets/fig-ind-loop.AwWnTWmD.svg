@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 225" width="680" height="225" role="img" aria-label="回路电感：信号路径与返回路径构成一个回路，两根导体各自有自感，互相之间还有互感 L_m">
+  <!--
+    照着课件「回路电感」那张图画：
+      上面是信号路径，下面是返回路径，两根导体构成一个回路。
+      两根导体各自有自感（L_signal / L_return），互相之间还有互感 L_m，
+      回路电感 = 两个自感之和 − 2 倍互感。
+    浅色填充圈出「回路面积」—— 面积越大，回路电感越大。
+    ⚠️ 下标用 <tspan dy="4">；公式里没有上标，别乱加 dy="-8"。
+    颜色写死在这里（<img> 引不到页面 CSS 变量），深浅靠 prefers-color-scheme 切。
+  -->
+  <style>
+    .area  { fill: #eef3f6; }
+    .cond  { fill: none; stroke: #00629b; stroke-width: 2.6; stroke-linecap: round; }
+    .cur   { fill: none; stroke: #ba0c2f; stroke-width: 1.8; stroke-linecap: round; }
+    .cur-h { fill: #ba0c2f; }
+    .mut   { fill: none; stroke: #5a6c7d; stroke-width: 1.5; }
+    .lbl   { fill: #46586a; font-size: 11.5px;
+             font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .var   { fill: #46586a; font-size: 13px; font-style: italic;
+             font-family: Georgia, "Times New Roman", serif; }
+    .f     { fill: #46586a; font-size: 16px;
+             font-family: Georgia, "Times New Roman", serif; }
+    .red   { fill: #ba0c2f; }
+
+    @media (prefers-color-scheme: dark) {
+      .area  { fill: #1d262c; }
+      .cond  { stroke: #00b5e2; }
+      .cur   { stroke: #ff7a8a; }
+      .cur-h { fill: #ff7a8a; }
+      .mut   { stroke: #a3b5c2; }
+      .lbl   { fill: #a3b5c2; }
+      .var   { fill: #a3b5c2; }
+      .f     { fill: #c9d6e0; }
+      .red   { fill: #ff7a8a; }
+    }
+  </style>
+
+  <!-- 回路面积 -->
+  <rect class="area" x="130" y="68" width="430" height="68" />
+
+  <!-- 信号路径 / 返回路径 -->
+  <path class="cond" d="M130 70 H560" />
+  <path class="cond" d="M130 134 H560" />
+  <text class="lbl" x="120" y="74" text-anchor="end">信号路径</text>
+  <text class="lbl" x="120" y="138" text-anchor="end">返回路径</text>
+
+  <!-- 电流 -->
+  <path class="cur" d="M160 70 H196" />
+  <path class="cur-h" d="M190 65 L202 70 L190 75 Z" />
+  <path class="cur" d="M530 134 H494" />
+  <path class="cur-h" d="M500 129 L488 134 L500 139 Z" />
+
+  <!-- 互感 L_m：两根导体之间的那一笔 -->
+  <path class="mut" d="M300 74 A 40 30 0 0 1 300 130" />
+  <text class="var" x="352" y="108">L</text>
+  <text class="var" x="360" y="112" font-size="10">m</text>
+
+  <!-- 两根导体各自的自感 -->
+  <text class="var" x="556" y="58" text-anchor="end">L</text>
+  <text class="var" x="564" y="62" font-size="10">signal</text>
+  <text class="var" x="556" y="160" text-anchor="end">L</text>
+  <text class="var" x="564" y="164" font-size="10">return</text>
+
+  <!-- 结论式 -->
+  <text class="f" x="340" y="200" text-anchor="middle">L<tspan dy="4" font-size="10">loop</tspan><tspan dy="-4"> = L</tspan><tspan dy="4" font-size="10">signal</tspan><tspan dy="-4"> + L</tspan><tspan dy="4" font-size="10">return</tspan><tspan dy="-4"> − 2L</tspan><tspan dy="4" font-size="10">m</tspan></text>
+</svg>
